@@ -32,3 +32,6 @@ Corda Enterprise is a commercial edition of the Corda platform, specifically opt
 throughput demands of modern day business. Corda Enterprise is interoperable and compatible with Corda open source and
 is designed for organisations with exacting requirements around quality of service and the network infrastructure in
 which they operate.
+
+Corda Enterprise contains all the core Corda functionality, but also includes the [Corda Firewall](corda-firewall-component.md),
+support for high-availability Node and Notary deployments, and compatibility with hardware security modules [(HSMs)](cryptoservice-configuration.md).
