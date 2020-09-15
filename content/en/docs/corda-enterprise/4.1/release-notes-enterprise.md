@@ -84,7 +84,7 @@ of the nodes database schema by default).
 ## Known issues
 
 
-Please refer to same section in [Corda Enterprise 4](https://docs.corda.r3.com/releases/4.0/release-notes-enterprise.html)
+Please refer to same section in [Corda Enterprise 4](https://docs.corda.net/docs/corda-enterprise/4.0/release-notes-enterprise.html)
 
 ## Upgrade notes
 
