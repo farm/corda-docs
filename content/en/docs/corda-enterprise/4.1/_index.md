@@ -11,25 +11,74 @@ title: Corda Enterprise 4.1
 version: '4.1'
 ---
 
+# Corda Enterprise 4.1
 
-# Welcome to Corda !
+Welcome to the documentation website for Corda Enterprise 4.1, based on the Corda 4.0 open source release.
 
-[Corda](https://www.corda.net/) is an open-source blockchain platform. If you’d like a quick introduction to blockchains
-and how Corda is different, then watch this short video:
+Corda Enterprise 4.1 builds on the performance, scalability, high-availability, enhanced DMZ security, and multiple database vendor support
+introduced in Corda Enterprise 3.0 with the following important new additions:
 
-<embed>
-<iframe src="https://player.vimeo.com/video/205410473" width="640" height="360" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
-</embed>
+* **Multiple nodes behind a single firewall**:
+  multi-tenancy of Corda Firewall (float and bridge) components enables multiple Corda nodes to multiplex all remote peer-to-peer message traffic
+  through a single Corda Firewall.
 
+* **Hardware Security Module (HSM) support**:
+  for Node CA and Legal Identity signing keys in hardware security modules provides increased security.
+  This release includes full integration with Azure Key Vault, Gemalto Luna and Utimaco HSM devices.
 
-Want to see Corda running? Download our demonstration application [DemoBench](https://www.corda.net/downloads/) or
-follow our [quickstart guide](quickstart-index.md).
+* **High Availability improvements**:
+  this release builds on the Hot-Cold High Availability configuration available in Corda Enterprise 3.x with improved deployment
+  configurations to simplify operational management and reduce overall VM footprint.
 
-If you want to start coding on Corda, then familiarise yourself with the [key concepts](key-concepts.md), then read
-our [Hello, World! tutorial](hello-world-introduction.md). For the background behind Corda, read the non-technical
-[platform white paper](https://www.r3.com/white-papers/the-corda-platform-an-introduction-whitepaper/) or for more detail, the [technical white paper](https://www.r3.com/white-papers/corda-technical-whitepaper/).
+* **Operational Deployment improvements**:
+  introduces improvements that optimize larger scale deployments, reduce the cost of infrastructure, and minimize the operational complexity
+  of multi-node hosting.
 
-If you have questions or comments, then get in touch on [Slack](https://slack.corda.net/) or ask a question on
-[Stack Overflow](https://stackoverflow.com/questions/tagged/corda) .
+* **Performance Test Suite for benchmarking**:
+  a toolkit to allow customers to test and validate Corda for their infrastructure performance and determine whether or not improvements are needed
+  before going live.
 
-We look forward to seeing what you can do with Corda!
+Corda Enterprise 4.1 also includes the new features of Corda 4, notably:
+
+* **Reference input states**:
+  these allow smart contracts to read data from the ledger without simultaneously updating it.
+
+* **State pointers**:
+  these work together with the reference states feature to make it easy for data to point to the latest version of any other piece of data
+  on the ledger by `StateRef` or linear ID.
+
+* **Signature constraints**:
+  facilitate upgrading CorDapps in a secure manner using standard public key signing mechanisms and controls.
+
+* **Security upgrades** to include:
+
+  - Sealed JARs are a security upgrade that ensures JARs cannot define classes in each other's packages, thus ensuring Java's package-private
+    visibility feature works.
+
+  - `@BelongsToContract` annotation: allows annotating states with which contract governs them.
+
+  - Two-sided `FinalityFlow` and `SwapIdentitiesFlow` to prevent nodes accepting any finalised transaction, outside of the context of a containing flow.
+
+  - Package namespace ownership: allows app developers to register their keys and Java package namespaces
+    with the zone operator. Any JAR that defines classes in these namespaces will have to be signed by those keys.
+
+* **Versioning**:
+  applications can now specify a **target version** in their JAR manifest that declares which version of the platform the app was tested against.
+  They can also specify a **minimum platform version** which specifies the minimum version a node must be running on
+  to allow the app to start using new features and APIs of that version.
+
+You can learn more about all new features in the :doc:`Enterprise <release-notes-enterprise>` and :doc:`Open Source <release-notes>` release notes.
+
+.. only:: htmlmode
+
+   .. note:: You can read this site offline by `downloading the PDF`_.
+
+   .. _`downloading the PDF`: _static/corda-developer-site.pdf
+
+Corda Enterprise is binary compatible with apps developed for the open source node. This docsite is intended for
+administrators and advanced users who wish to learn how to install and configure an enterprise deployment. For
+application development please continue to refer to `the main project documentation website <https://docs.corda.net/>`_.
+
+{{< note >}}
+Corda Enterprise provides platform API version 4, which matches the API available in open source Corda 4.x releases.
+{{</ note >}}
