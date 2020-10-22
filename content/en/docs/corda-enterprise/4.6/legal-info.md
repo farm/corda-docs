@@ -4532,9 +4532,9 @@ This License does not grant permission to use the trade names, trademarks, servi
 
 Unless otherwise expressly agreed by New Relic in a separate written license agreement, these files are provided AS IS, WITHOUT WARRANTY OF ANY KIND, including without any implied warranties of MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, or NON-INFRINGEMENT. As a condition to your use of these files, you are solely responsible for such use. New Relic will have no liability to you for direct, indirect, consequential, incidental, special, or punitive damages or for lost profits or data.
 
-**END OF LICENSE TEXT**
+---------------------END OF LICENSE TEXT-----------------------------------------
 
-**END OF NOTICES AND INFORMATION for above components**
+=============END OF NOTICES AND INFORMATION for above components=================
 
 
 ================================================
