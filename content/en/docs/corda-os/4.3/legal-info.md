@@ -156,6 +156,7 @@ This file is based on or incorporates material from the projects listed below (T
 * netty-transport-native-epoll
 * netty-transport-native-kqueue
 * netty-transport-native-unix-common
+* newrelic-api
 * objenesis
 * okhttp
 * okio
@@ -176,7 +177,6 @@ This file is based on or incorporates material from the projects listed below (T
 * shiro-lang
 * slf4j-api
 * snakeyaml
-* newrelic-api
 * snappy
 * sshd-core
 * sshd-pam
@@ -700,6 +700,10 @@ liquibase-core 3.5.5
 [https://github.com/liquibase/liquibase](https://github.com/liquibase/liquibase)
 [https://github.com/liquibase/liquibase/blob/master/LICENSE.txt](https://github.com/liquibase/liquibase/blob/master/LICENSE.txt)
 
+newrelic-api    3.10.0
+[https://newrelic.com/](https://newrelic.com/)
+[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE](https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
+
 objenesis 2.2
 [http://objenesis.org/](http://objenesis.org/)
 [http://objenesis.org/license.html](http://objenesis.org/license.html)
@@ -707,10 +711,6 @@ objenesis 2.2
 snakeyaml 1.18
 [http://www.snakeyaml.org/](http://www.snakeyaml.org/)
 [https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt](https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt)
-
-newrelic-api    3.10.0
-[https://newrelic.com/](https://newrelic.com/)
-[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
 
 ———————–START OF LICENSE TEXT———————————–
 

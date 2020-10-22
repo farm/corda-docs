@@ -264,79 +264,79 @@ This file is based on or incorporates material from the projects listed below (T
 
 122.  metrics-jmx io.dropwizard.metrics 4.1.0
 
-123.  mina-core org.apache.mina 2.0.16
+123.	metrics-new-relic 1.1.1
 
-124.  minlog com.esotericsoftware 1.3.0
+124.  mina-core org.apache.mina 2.0.16
 
-125.  netty-buffer io.netty 4.1.46.Final
+125.  minlog com.esotericsoftware 1.3.0
 
-126.  netty-codec io.netty 4.1.46.Final
+126.  netty-buffer io.netty 4.1.46.Final
 
-127.  netty-codec-http io.netty 4.1.46.Final
+127.  netty-codec io.netty 4.1.46.Final
 
-128.  netty-codec-socks io.netty 4.1.46.Final
+128.  netty-codec-http io.netty 4.1.46.Final
 
-129.  netty-common io.netty 4.1.46.Final
+129.  netty-codec-socks io.netty 4.1.46.Final
 
-130.  netty-handler io.netty 4.1.46.Final
+130.  netty-common io.netty 4.1.46.Final
 
-131.  netty-handler-proxy io.netty 4.1.46.Final
+131.  netty-handler io.netty 4.1.46.Final
 
-132.  netty-resolver io.netty 4.1.46.Final
+132.  netty-handler-proxy io.netty 4.1.46.Final
 
-133.  netty-tcnative-boringssl-static io.netty 2.0.29.Final
+133.  netty-resolver io.netty 4.1.46.Final
 
-134.  netty-transport io.netty 4.1.46.Final
+134.  netty-tcnative-boringssl-static io.netty 2.0.29.Final
 
-135.  netty-transport-native-epoll io.netty 4.1.46.Final
+135.  netty-transport io.netty 4.1.46.Final
 
-136.  netty-transport-native-kqueue io.netty 4.1.46.Final
+136.  netty-transport-native-epoll io.netty 4.1.46.Final
 
-137.  netty-transport-native-unix-common io.netty 4.1.46.Final
+137.  netty-transport-native-kqueue io.netty 4.1.46.Final
 
-138.  objenesis org.objenesis 2.5.1
+138.  netty-transport-native-unix-common io.netty 4.1.46.Final
 
-139.  okhttp com.squareup.okhttp3 3.14.2
+139.  newrelic-api com.newrelic.agent.java 3.10.0
 
-140.  okio com.squareup.okio 1.17.2
+140.  objenesis org.objenesis 2.5.1
 
-141.  picocli info.picocli 3.9.6
+141.  okhttp com.squareup.okhttp3 3.14.2
 
-142.  proton-j org.apache.qpid 0.33.0
+142.  okio com.squareup.okio 1.17.2
 
-143.  quasar-core co.paralleluniverse 0.7.10
+143.  picocli info.picocli 3.9.6
 
-144.	metrics-new-relic 1.1.1
+144.  proton-j org.apache.qpid 0.33.0
 
-145.  reflectasm com.esotericsoftware 1.11.3
+145.  quasar-core co.paralleluniverse 0.7.10
 
-146.  rxjava io.reactivex 1.3.8
+146.  reflectasm com.esotericsoftware 1.11.3
 
-147.  shiro-cache org.apache.shiro 1.4.1
+147.  rxjava io.reactivex 1.3.8
 
-148.  shiro-config-core org.apache.shiro 1.4.1
+148.  shiro-cache org.apache.shiro 1.4.1
 
-149.  shiro-config-ogdl org.apache.shiro 1.4.1
+149.  shiro-config-core org.apache.shiro 1.4.1
 
-150.  shiro-core org.apache.shiro 1.4.1
+150.  shiro-config-ogdl org.apache.shiro 1.4.1
 
-151.  shiro-crypto-cipher org.apache.shiro 1.4.1
+151.  shiro-core org.apache.shiro 1.4.1
 
-152.  shiro-crypto-core org.apache.shiro 1.4.1
+152.  shiro-crypto-cipher org.apache.shiro 1.4.1
 
-153.  shiro-crypto-hash org.apache.shiro 1.4.1
+153.  shiro-crypto-core org.apache.shiro 1.4.1
 
-154.  shiro-event org.apache.shiro 1.4.1
+154.  shiro-crypto-hash org.apache.shiro 1.4.1
 
-155.  shiro-lang org.apache.shiro 1.4.1
+155.  shiro-event org.apache.shiro 1.4.1
 
-156.  slf4j-api org.slf4j 1.7.30
+156.  shiro-lang org.apache.shiro 1.4.1
 
-157.  slf4j-nop org.slf4j 1.7.30
+157.  slf4j-api org.slf4j 1.7.30
 
-158.  snakeyaml org.yaml 1.23
+158.  slf4j-nop org.slf4j 1.7.30
 
-159.  newrelic-api com.newrelic.agent.java 3.10.0
+159.  snakeyaml org.yaml 1.23
 
 160.  snappy org.iq80.snappy 0.4
 
@@ -836,6 +836,10 @@ liquibase-core 3.6.3
 https://github.com/liquibase/liquibase
 https://github.com/liquibase/liquibase/blob/master/LICENSE.txt
 
+newrelic-api    3.10.0
+[https://newrelic.com/](https://newrelic.com/)
+[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE](https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
+
 objenesis 2.5.1
 http://objenesis.org/
 http://objenesis.org/license.html
@@ -843,10 +847,6 @@ http://objenesis.org/license.html
 snakeyaml 1.23
 http://www.snakeyaml.org/
 https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt
-
-newrelic-api    3.10.0
-[https://newrelic.com/](https://newrelic.com/)
-[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
 
 
 ## Start of Licence Text

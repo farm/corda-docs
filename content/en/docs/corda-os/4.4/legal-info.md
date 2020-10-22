@@ -143,41 +143,41 @@ This file is based on or incorporates material from the projects listed below (T
 118.	log4j-web
 119.	metrics-core
 120.	metrics-jmx
-121.	mina-core
-122.	minlog
-123.	netty-buffer
-124.	netty-codec
-125.	netty-codec-http
-126.	netty-common
-127.	netty-handler
-128.	netty-resolver
-129.	netty-tcnative-boringssl-static
-130.	netty-transport
-131.	netty-transport-native-epoll
-132.	netty-transport-native-kqueue
-133.	netty-transport-native-unix-common
-134.	objenesis
-135.	okhttp
-136.	okio
-137.	picocli
-138.	proton-j
-139.	quasar-core
-140.	metrics-new-relic
-141.	reflectasm
-142.	rxjava
-143.	shiro-cache
-144.	shiro-config-core
-145.	shiro-config-ogdl
-146.	shiro-core
-147.	shiro-crypto-cipher
-148.	shiro-crypto-core
-149.	shiro-crypto-hash
-150.	shiro-event
-151.	shiro-lang
-152.	slf4j-api
-153.	slf4j-nop
-154.	snakeyaml
-155.	newrelic-api
+121.	metrics-new-relic
+122.	mina-core
+123.	minlog
+124.	netty-buffer
+125.	netty-codec
+126.	netty-codec-http
+127.	netty-common
+128.	netty-handler
+129.	netty-resolver
+130.	netty-tcnative-boringssl-static
+131.	netty-transport
+132.	netty-transport-native-epoll
+133.	netty-transport-native-kqueue
+134.	netty-transport-native-unix-common
+135.	newrelic-api
+136.	objenesis
+137.	okhttp
+138.	okio
+139.	picocli
+140.	proton-j
+141.	quasar-core
+142.	reflectasm
+143.	rxjava
+144.	shiro-cache
+145.	shiro-config-core
+146.	shiro-config-ogdl
+147.	shiro-core
+148.	shiro-crypto-cipher
+149.	shiro-crypto-core
+150.	shiro-crypto-hash
+151.	shiro-event
+152.	shiro-lang
+153.	slf4j-api
+154.	slf4j-nop
+155.	snakeyaml
 156.	snappy
 157.	sshd-common
 158.	sshd-core
@@ -658,6 +658,10 @@ liquibase-core 3.6.3
 https://github.com/liquibase/liquibase
 https://github.com/liquibase/liquibase/blob/master/LICENSE.txt
 
+newrelic-api    3.10.0
+[https://newrelic.com/](https://newrelic.com/)
+[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE](https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
+
 objenesis 2.5.1
 http://objenesis.org/
 http://objenesis.org/license.html
@@ -665,10 +669,6 @@ http://objenesis.org/license.html
 snakeyaml 1.23
 http://www.snakeyaml.org/
 https://bitbucket.org/asomov/snakeyaml/src/default/LICENSE.txt
-
-newrelic-api    3.10.0
-[https://newrelic.com/](https://newrelic.com/)
-[https://github.com/newrelic/newrelic-java-agent/blob/main/LICENSE)
 
 -----------------------START OF LICENSE TEXT-----------------------------------
 
