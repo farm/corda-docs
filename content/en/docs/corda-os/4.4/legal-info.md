@@ -162,27 +162,28 @@ This file is based on or incorporates material from the projects listed below (T
 137.	picocli
 138.	proton-j
 139.	quasar-core
-140.	reflectasm
-141.	rxjava
-142.	shiro-cache
-143.	shiro-config-core
-144.	shiro-config-ogdl
-145.	shiro-core
-146.	shiro-crypto-cipher
-147.	shiro-crypto-core
-148.	shiro-crypto-hash
-149.	shiro-event
-150.	shiro-lang
-151.	slf4j-api
-152.	slf4j-nop
-153.	snakeyaml
-154.	newrelic-api
-155.	snappy
-156.	sshd-common
-157.	sshd-core
-158.	sshd-pam
-159.	stay-ex
-160.	txw2
+140.	metrics-new-relic
+141.	reflectasm
+142.	rxjava
+143.	shiro-cache
+144.	shiro-config-core
+145.	shiro-config-ogdl
+146.	shiro-core
+147.	shiro-crypto-cipher
+148.	shiro-crypto-core
+149.	shiro-crypto-hash
+150.	shiro-event
+151.	shiro-lang
+152.	slf4j-api
+153.	slf4j-nop
+154.	snakeyaml
+155.	newrelic-api
+156.	snappy
+157.	sshd-common
+158.	sshd-core
+159.	sshd-pam
+160.	stay-ex
+161.	txw2
 
 
 ## Start of Notices
@@ -3848,6 +3849,63 @@ do so.  If you do not wish to do so, delete this exception statement
 from your version.
 
 ---------------------END OF LICENSE TEXT-----------------------------------------
+
+=============END OF NOTICES AND INFORMATION for above components=================
+
+
+================================================
+
+================================================
+
+
+=========== START OF NOTICES AND INFORMATION for the following components=========
+
+metrics-new-relic       1.1.1
+[https://github.com/palominolabs/metrics-new-relic](https://github.com/palominolabs/metrics-new-relic)
+[https://github.com/palominolabs/metrics-new-relic/blob/master/LICENSE](https://github.com/palominolabs/metrics-new-relic/blob/master/LICENSE)
+
+———————–START OF LICENSE TEXT———————————–
+
+# Copyfree Open Innovation License
+
+This is version 0.4 of the Copyfree Open Innovation License.
+
+## Terms and Conditions
+
+Redistributions, modified or unmodified, in whole or in part, must retain
+applicable copyright or other legal privilege notices, these conditions, and
+the following license terms and disclaimer.  Subject to these conditions, the
+holder(s) of copyright or other legal privileges, author(s) or assembler(s),
+and contributors of this work hereby grant to any person who obtains a copy of
+this work in any form:
+
+1. Permission to reproduce, modify, distribute, publish, sell, sublicense, use,
+and/or otherwise deal in the licensed material without restriction.
+
+2. A perpetual, worldwide, non-exclusive, royalty-free, irrevocable patent
+license to reproduce, modify, distribute, publish, sell, use, and/or otherwise
+deal in the licensed material without restriction, for any and all patents:
+
+
+a. Held presently or in the future by each such holder of copyright or
+other legal privilege, author or assembler, or contributor, necessarily
+infringed by the contributions alone or by combination with the work, of
+that privilege holder, author or assembler, or contributor.
+
+b. Necessarily infringed by the work at the time that holder of copyright
+or other privilege, author or assembler, or contributor made any
+contribution to the work.
+
+
+NO WARRANTY OF ANY KIND IS IMPLIED BY, OR SHOULD BE INFERRED FROM, THIS LICENSE
+OR THE ACT OF DISTRIBUTION UNDER THE TERMS OF THIS LICENSE, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS, ASSEMBLERS, OR HOLDERS OF
+COPYRIGHT OR OTHER LEGAL PRIVILEGE BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN ACTION OF CONTRACT, TORT, OR OTHERWISE ARISING FROM, OUT
+OF, OR IN CONNECTION WITH THE WORK OR THE USE OF OR OTHER DEALINGS IN THE WORK.
+
+———————END OF LICENSE TEXT—————————————–
 
 =============END OF NOTICES AND INFORMATION for above components=================
 

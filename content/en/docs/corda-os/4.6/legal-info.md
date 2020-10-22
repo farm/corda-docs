@@ -306,47 +306,49 @@ This file is based on or incorporates material from the projects listed below (T
 
 143.  quasar-core co.paralleluniverse 0.7.10
 
-144.  reflectasm com.esotericsoftware 1.11.3
+144.	metrics-new-relic 1.1.1
 
-145.  rxjava io.reactivex 1.3.8
+145.  reflectasm com.esotericsoftware 1.11.3
 
-146.  shiro-cache org.apache.shiro 1.4.1
+146.  rxjava io.reactivex 1.3.8
 
-147.  shiro-config-core org.apache.shiro 1.4.1
+147.  shiro-cache org.apache.shiro 1.4.1
 
-148.  shiro-config-ogdl org.apache.shiro 1.4.1
+148.  shiro-config-core org.apache.shiro 1.4.1
 
-149.  shiro-core org.apache.shiro 1.4.1
+149.  shiro-config-ogdl org.apache.shiro 1.4.1
 
-150.  shiro-crypto-cipher org.apache.shiro 1.4.1
+150.  shiro-core org.apache.shiro 1.4.1
 
-151.  shiro-crypto-core org.apache.shiro 1.4.1
+151.  shiro-crypto-cipher org.apache.shiro 1.4.1
 
-152.  shiro-crypto-hash org.apache.shiro 1.4.1
+152.  shiro-crypto-core org.apache.shiro 1.4.1
 
-153.  shiro-event org.apache.shiro 1.4.1
+153.  shiro-crypto-hash org.apache.shiro 1.4.1
 
-154.  shiro-lang org.apache.shiro 1.4.1
+154.  shiro-event org.apache.shiro 1.4.1
 
-155.  slf4j-api org.slf4j 1.7.30
+155.  shiro-lang org.apache.shiro 1.4.1
 
-156.  slf4j-nop org.slf4j 1.7.30
+156.  slf4j-api org.slf4j 1.7.30
 
-157.  snakeyaml org.yaml 1.23
+157.  slf4j-nop org.slf4j 1.7.30
 
-158.  newrelic-api com.newrelic.agent.java 3.10.0
+158.  snakeyaml org.yaml 1.23
 
-159.  snappy org.iq80.snappy 0.4
+159.  newrelic-api com.newrelic.agent.java 3.10.0
 
-160.  sshd-common org.apache.sshd 2.3.0
+160.  snappy org.iq80.snappy 0.4
 
-161.  sshd-core org.apache.sshd 2.3.0
+161.  sshd-common org.apache.sshd 2.3.0
 
-162.  sshd-pam org.apache.sshd 0.11.0
+162.  sshd-core org.apache.sshd 2.3.0
 
-163.  stax-ex org.jvnet.staxex 1.8
+163.  sshd-pam org.apache.sshd 0.11.0
 
-164.  txw2 org.glassfish.jaxb 2.3.1
+164.  stax-ex org.jvnet.staxex 1.8
+
+165.  txw2 org.glassfish.jaxb 2.3.1
 
 
 ## Start of Notices
@@ -3994,6 +3996,63 @@ from your version.
 ================================================
 
 ================================================
+
+=========== START OF NOTICES AND INFORMATION for the following components=========
+
+metrics-new-relic       1.1.1
+[https://github.com/palominolabs/metrics-new-relic](https://github.com/palominolabs/metrics-new-relic)
+[https://github.com/palominolabs/metrics-new-relic/blob/master/LICENSE](https://github.com/palominolabs/metrics-new-relic/blob/master/LICENSE)
+
+———————–START OF LICENSE TEXT———————————–
+
+# Copyfree Open Innovation License
+
+This is version 0.4 of the Copyfree Open Innovation License.
+
+## Terms and Conditions
+
+Redistributions, modified or unmodified, in whole or in part, must retain
+applicable copyright or other legal privilege notices, these conditions, and
+the following license terms and disclaimer.  Subject to these conditions, the
+holder(s) of copyright or other legal privileges, author(s) or assembler(s),
+and contributors of this work hereby grant to any person who obtains a copy of
+this work in any form:
+
+1. Permission to reproduce, modify, distribute, publish, sell, sublicense, use,
+and/or otherwise deal in the licensed material without restriction.
+
+2. A perpetual, worldwide, non-exclusive, royalty-free, irrevocable patent
+license to reproduce, modify, distribute, publish, sell, use, and/or otherwise
+deal in the licensed material without restriction, for any and all patents:
+
+
+a. Held presently or in the future by each such holder of copyright or
+other legal privilege, author or assembler, or contributor, necessarily
+infringed by the contributions alone or by combination with the work, of
+that privilege holder, author or assembler, or contributor.
+
+b. Necessarily infringed by the work at the time that holder of copyright
+or other privilege, author or assembler, or contributor made any
+contribution to the work.
+
+
+NO WARRANTY OF ANY KIND IS IMPLIED BY, OR SHOULD BE INFERRED FROM, THIS LICENSE
+OR THE ACT OF DISTRIBUTION UNDER THE TERMS OF THIS LICENSE, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS, ASSEMBLERS, OR HOLDERS OF
+COPYRIGHT OR OTHER LEGAL PRIVILEGE BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN ACTION OF CONTRACT, TORT, OR OTHERWISE ARISING FROM, OUT
+OF, OR IN CONNECTION WITH THE WORK OR THE USE OF OR OTHER DEALINGS IN THE WORK.
+
+———————END OF LICENSE TEXT—————————————–
+
+=============END OF NOTICES AND INFORMATION for above components=================
+
+
+================================================
+
+================================================
+
 
 =========== START OF NOTICES AND INFORMATION for the following components=========
 
