@@ -294,47 +294,47 @@ This file is based on or incorporates material from the projects listed below (T
 
 137.  netty-transport-native-unix-common io.netty 4.1.46.Final
 
-138.  newrelic-api com.newrelic.agent.java 3.10.0
+138.  objenesis org.objenesis 2.5.1
 
-139.  objenesis org.objenesis 2.5.1
+139.  okhttp com.squareup.okhttp3 3.14.2
 
-140.  okhttp com.squareup.okhttp3 3.14.2
+140.  okio com.squareup.okio 1.17.2
 
-141.  okio com.squareup.okio 1.17.2
+141.  picocli info.picocli 3.9.6
 
-142.  picocli info.picocli 3.9.6
+142.  proton-j org.apache.qpid 0.33.0
 
-143.  proton-j org.apache.qpid 0.33.0
+143.  quasar-core co.paralleluniverse 0.7.10
 
-144.  quasar-core co.paralleluniverse 0.7.10
+144.  reflectasm com.esotericsoftware 1.11.3
 
-145.  reflectasm com.esotericsoftware 1.11.3
+145.  rxjava io.reactivex 1.3.8
 
-146.  rxjava io.reactivex 1.3.8
+146.  shiro-cache org.apache.shiro 1.4.1
 
-147.  shiro-cache org.apache.shiro 1.4.1
+147.  shiro-config-core org.apache.shiro 1.4.1
 
-148.  shiro-config-core org.apache.shiro 1.4.1
+148.  shiro-config-ogdl org.apache.shiro 1.4.1
 
-149.  shiro-config-ogdl org.apache.shiro 1.4.1
+149.  shiro-core org.apache.shiro 1.4.1
 
-150.  shiro-core org.apache.shiro 1.4.1
+150.  shiro-crypto-cipher org.apache.shiro 1.4.1
 
-151.  shiro-crypto-cipher org.apache.shiro 1.4.1
+151.  shiro-crypto-core org.apache.shiro 1.4.1
 
-152.  shiro-crypto-core org.apache.shiro 1.4.1
+152.  shiro-crypto-hash org.apache.shiro 1.4.1
 
-153.  shiro-crypto-hash org.apache.shiro 1.4.1
+153.  shiro-event org.apache.shiro 1.4.1
 
-154.  shiro-event org.apache.shiro 1.4.1
+154.  shiro-lang org.apache.shiro 1.4.1
 
-155.  shiro-lang org.apache.shiro 1.4.1
+155.  slf4j-api org.slf4j 1.7.30
 
-156.  slf4j-api org.slf4j 1.7.30
+156.  slf4j-nop org.slf4j 1.7.30
 
-157.  slf4j-nop org.slf4j 1.7.30
+157.  snakeyaml org.yaml 1.23
 
-158.  snakeyaml org.yaml 1.23
+158.  newrelic-api com.newrelic.agent.java 3.10.0
 
 159.  snappy org.iq80.snappy 0.4
 
