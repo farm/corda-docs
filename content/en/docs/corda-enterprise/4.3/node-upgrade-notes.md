@@ -33,7 +33,7 @@ Note: The protocol is designed to tolerate node outages. During the upgrade proc
 ## Step 1. Drain the node
 
 Before a node, or an application on a node, can be upgraded, the node must be put in draining-mode. This brings the currently running
-[Flows](key-concepts-node.md/) to a smooth halt (existing work is finished, and new work is queued rather than being processed).
+[Flows](key-concepts-flows.md/) to a smooth halt (existing work is finished, and new work is queued rather than being processed).
 
 Draining flows is a key task for node administrators to perform. It exists to simplify applications by ensuring apps don’t have to be
 able to migrate workflows from any arbitrary point to other arbitrary points, a task that would rapidly become unfeasible as workflow
