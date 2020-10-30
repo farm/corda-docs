@@ -65,7 +65,7 @@ Before upgrading, make sure the platform database schema is properly migrated an
 
 1. Change the V number (version number) in your CorDapp's relevant Gradle file to the version you are upgrading to - such as 1.2.2
 
-2. Remove all references to `selection` and `money` `.jar` files from your build function (in many cases, Gradle). The functions of these JARS has been moved into `workflows` in versions 1.2 onwards.
+2. Remove all references to `selection` and `money` `.jar` files from your build function (in many cases, Gradle). The functions of these `.jar` files have been moved into `workflows` in versions 1.2 onwards.
 
 3. Recompile your CorDapp.
 

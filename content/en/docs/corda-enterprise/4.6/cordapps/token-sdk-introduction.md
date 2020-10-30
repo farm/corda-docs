@@ -60,12 +60,12 @@ In V1.2.2, a new [Token Selection](token-selection) feature allows a the excepti
 To upgrade the Tokens SDK:
 
 {{< warning >}}
-Before upgrading, make sure the platform database schema is properly migrated and the changelog syncrhonised - consult the [upgrade documentation for Corda Enterprise 4.6](./app-upgrade-notes.md). If you have not migrated the schema, the Tokens SDK may not upgrade correctly.
+Before upgrading, make sure the platform database schema is properly migrated and the changelog syncrhonised - consult the [upgrade documentation for Corda Enterprise 4.6](../app-upgrade-notes.md). If you have not migrated the schema, the Tokens SDK may not upgrade correctly.
 {{< /warning >}}
 
 1. Change the V number (version number) in your CorDapp's relevant Gradle file to the version you are upgrading to - such as 1.2.2
 
-2. Remove all references to `selection` and `money` `.jar` files from your build function (in many cases, Gradle). The functions of these JARS has been moved into `workflows` in versions 1.2 onwards.
+2. Remove all references to `selection` and `money` `.jar` files from your build function (in many cases, Gradle). The functions of these `.jar` files have been moved into `workflows` in versions 1.2 onwards.
 
 3. Recompile your CorDapp.
 
