@@ -1,6 +1,6 @@
 ---
 title: Release files and checksums
-date: '2020-11-19T00:00:00Z'
+date: '2020-10-22T14:41:43Z'
 menu:
   corda-enterprise-4-0:
     parent: corda-enterprise-4-0-release-notes-enterprise
