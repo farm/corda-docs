@@ -50,14 +50,14 @@ In a Business Network, you can assign different roles to members of the network.
 
 This is an extension for Corda OS 4.6. If you have this version of Corda, you can access the required `.jar` files here:
 
-* BNE contracts https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-contracts/1.0/business-networks-contracts-1.0.jar
-* BNE workflows https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-workflows/1.0/business-networks-workflows-1.0.jar
-* Sample CorDapp contracts https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-contracts/1.0/business-networks-demo-contracts-1.0.jar
-* Sample CorDapp workflows https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-workflows/1.0/business-networks-demo-workflows-1.0.jar
+* BNE contracts: [https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-contracts/1.0/business-networks-contracts-1.0.jar](https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-contracts/1.0/business-networks-contracts-1.0.jar).
+* BNE workflows: [https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-workflows/1.0/business-networks-workflows-1.0.jar](https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-workflows/1.0/business-networks-workflows-1.0.jar).
+* Sample CorDapp contracts: [https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-contracts/1.0/business-networks-demo-contracts-1.0.jar](https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-contracts/1.0/business-networks-demo-contracts-1.0.jar).
+* Sample CorDapp workflows: [https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-workflows/1.0/business-networks-demo-workflows-1.0.jar](https://software.r3.com/artifactory/webapp/#/artifacts/browse/tree/General/corda-releases/net/corda/bn/business-networks-demo-workflows/1.0/business-networks-demo-workflows-1.0.jar).
 
 To install the extension:
 
-1. Add the business-networks-contracts dependency in your **contracts** (and states) cordapp module:
+1. Add the `business-networks-contracts` dependency in your **contracts** (and states) CorDapp module:
 
 ```
 dependencies {
@@ -66,7 +66,7 @@ dependencies {
     //...
 }
 ```
-2. Add the business-networks-workflows dependency in your "workflows" cordapp module:
+2. Add the `business-networks-workflows` dependency in your **workflows** CorDapp module:
 
 ```
 dependencies {
@@ -78,7 +78,7 @@ dependencies {
 
 3. Add both dependencies in your **Cordform** - `deployNodes` - task.
 
-You have installed the business network membership extension.
+You have installed the Business Network membership extension.
 
 ## Create a business network
 
