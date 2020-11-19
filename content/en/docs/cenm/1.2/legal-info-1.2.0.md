@@ -12,7 +12,7 @@ menu:
 tags:
 - legal
 - info
-title: Legal notice - CENM 1.2.0
+title: Third-party software licence information - CENM 1.2.0
 ---
 
 # Corda Enterprise Network Manager 1.2.0 third-party software notices and licence information
