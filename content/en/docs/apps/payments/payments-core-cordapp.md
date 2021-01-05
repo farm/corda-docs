@@ -10,9 +10,9 @@ tags:
 title: Payments-core CorDapp (Pre-Alpha)
 weight: 100
 ---
-# Payments-core CorDapp (Pre-Alpha stage)
+# Payments-core CorDapp (pre-alpha stage)
 
-This version of the Payments-core CorDapp contains all the flows and actions that are required to make payments between nodes, and between nodes and external parties. This means you can you can write CorDapps that use these flows to facilitate payments, via a Payment Service Provider, on a Corda network.
+This version of the Payments-core CorDapp contains all the flows and actions that are required to make payments between nodes, and between nodes and external parties. This means you can you can write CorDapps that use these flows to facilitate payments, via a Payment Service Provider (PSP), on a Corda network.
 
 In this version of the Payments-core CorDapp, you can theoretically create payments via integration with any desired PSP. This is made possible using the ISO 20022 messaging standard, which is marshalled from raw XML by the Payments-core CorDapp as the API connection is made to the PSP. The best way to see this in action is to make use of the Mock Payment Rail feature, included in the project.
 
@@ -48,7 +48,7 @@ To use this pre-alpha feature:
 
 ## Integrating a PSP with the Payments-core CorDapp
 
-Use these steps to get an overview of how you can integrate a PSP with your network. You can choose to create your own solution with a PSP of your choice, or follow these steps using the [Mock Payment Rail](#mock-payment-rail) which includes a Mock PSP that acts in a similar way to most commercial PSPs, but will not incur costs. For early and experimental purposes, the Mock Payment Rail gives you a fast, easy to set up experience of making payments on Corda.
+Use these steps to get an overview of how you can integrate a PSP with your network. You can choose to create your own solution with a PSP of your choice, or follow these steps using the [Mock Payment Rail](#mock-payment-rail) which includes a mock PSP that acts in a similar way to most commercial PSPs, but will not incur costs. For early and experimental purposes, the Mock Payment Rail gives you a fast, easy to set up experience of making payments on Corda.
 
 To integrate a PSP with the Payments-core CorDapp:
 
@@ -180,11 +180,11 @@ task integrationTest(type: Test, dependsOn: []) {
 
 The project contains five modules:
 
-* `payments-core` - provides the standard API and deals with messages in the ISO20022 messaging Standard, and Integration layer (cordapp that communicates with PSP), which converts the standard ISO messages into PSP specific formats and handle communication and authorization with the specific PSP.  
+* `payments-core` - provides the standard API and deals with messages in the ISO 20022 messaging Standard, and Integration layer (cordapp that communicates with PSP), which converts the standard ISO messages into PSP specific formats and handle communication and authorization with the specific PSP.  
 * `external-action-manager` - used to manage and store asynchronous operations that occur outside of your network - like initiating payment via a PSP.
 * `iso-xml-utils` - used to marshall and unmarshall raw XML into ISO 20022. ISO 20022 is the international messaging standard used by PSPs globally.
 * `mock-payment-rail` - a test payment rail that allows you to quickly build and deploy a trial payment solution.
-* `mock-payment-service-provider` - a test PSP that allows payments to be made int he mock environment.
+* `mock-payment-service-provider` - a test PSP that allows payments to be made in the mock environment.
 
 ### External Action Manager
 
@@ -192,7 +192,7 @@ The `external-action-manager` is used to manage and store external asynchronous 
 
 Actions that can be performed using the `external-action-manager` are either **idempotent** or **non-idempotent**.  An action is idempotent when you want a specific operation to be executed once, no matter how many times the action is triggered.  For example, the `InitiateModulrPayment` action in `ModulrPaymentActions` is idempotent because you cannot allow a payment with a deduplication ID to initiate twice.
 
-These actions are triggered during a flow when a node needs to make a HTTP request via the client for the PSP's API.  In the case of `MockPaymentRail`, the actions are triggered when a flow needs to make an asynchronous request using `MockRailClient`.  When an action is being executed during a flow, the flow is check-pointed and serialized to disk.
+These actions are triggered during a flow when a node needs to make an HTTP request via the client for the PSP's API.  In the case of `MockPaymentRail`, the actions are triggered when a flow needs to make an asynchronous request using `MockRailClient`.  When an action is being executed during a flow, the flow is check-pointed and serialized to disk.
 
 The `external-action-manager` module contains three important packages:
 

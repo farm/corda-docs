@@ -15,32 +15,32 @@ weight: 200
 Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rails CorDapp, along with the [Payments-core CorDapp](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
 
 {{< warning >}}
-This version of the Modulr Payments Rail is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate, and change, in future versions.
+This version of the Modulr Payments Rail is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
 {{< /warning >}}
 
 ## How this works with the Payments-core CorDapp
 
-This payment rail uses the Payments Core-CorDapp to make payments and retrieve payment data.
+This payment rail uses the Payments-core CorDapp to make payments and retrieve payment data.
 
 A typical payment looks like this:  
 
-1. The modulr-payments-cordapp establishes authorised connection to the Modulr API.
+1. The Modulr payments CorDapp connects to the Modulr API.
 
 2. The Modulr CorDapp extracts the necessary information from the provided ISO20022 formatted message and constructs a JSON payload as specified by Modulr.
 
-3. The ISO20022 payload send to Modulr is stored.
+3. The ISO 20022 payload sent to Modulr is stored.
 
-4. The modulr-payments-cordapp sends a HTTP request with the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
+4. The Modulr payments CorDapp sends an HTTP request containing the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
 
-5. The modulr-payments-cordapp waits for a response from the Modulr API.
+5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of PROCESSED or CANCELLED. 
 
-6. The response received from the Modulr API is converted from JSON for Modulr to the equivalent ISO XML message.
+6. The response received from the Modulr API is converted from JSON to the equivalent ISO XML message.
 
-## Project Structure
+## Project structure
 
 Use this documentation to explore the `modulr-rail` module. You should also be familiar with the Payments-core CorDapp before using this rail.
 
-In the ModulR Payments Rauil main submodule, there are two packages:
+In the Modulr payments rail main submodule, there are two packages:
 
 * Client - which contains the `ModulrClient` class - a proxy to the Modulr API.
 * Rail - which contains sub-projects with the actions, flows, and services required to make payments from a Corda node via the ModulR PSP.
@@ -57,7 +57,7 @@ Additionally, there are `Utils` and `Exceptions` classes as well as a class for 
 
 Rail contains two subprojects:
 
-* `actions`
+* `actions`.
 * `flows`.  
 
 It also contains classes for:
@@ -130,7 +130,7 @@ This flow initiates a payment using the Modulr payment rail.  It will construct 
 
 #### Exceptions
 
-* `PaymentExecutionException` - This exception will be thrown if the currency specified is not `GBP`.
+* `PaymentExecutionException` - This exception will be thrown if the currency specified is not one of the two accepted currencies: `GBP` or `EUR`.
 * `IdempotentActionExecutionException` - This exception will be thrown if the action triggered to initiate a Modulr payment is unsuccesful.
 * `ModulrPaymentExecutionException` - This exception is thrown if no other exceptions are thrown and the initiated Modulr payment is still unsuccesful.
 
