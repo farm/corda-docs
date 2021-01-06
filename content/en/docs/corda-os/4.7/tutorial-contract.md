@@ -922,7 +922,9 @@ being consumed must have its encumbrance consumed in the same transaction, other
 
 The encumbrance reference is optional in the `ContractState` interface:
 
+{{< note >}}
 If you're using Java, you may want to add this jar to your gradle dependencies for this code example to compile.  
+{{< /note >}}
 
 ```
 cordaCompile "$corda_release_group:corda-finance-contracts:$corda_release_version"

@@ -91,7 +91,7 @@ class ReportManuallyResponder(val counterpartySession: FlowSession) : FlowLogic<
         serviceHub.recordTransactions(StatesToRecord.ALL_VISIBLE, listOf(signedTransaction))
     }
 }
-
+```
 {{< /tab >}}
 
 
@@ -186,6 +186,7 @@ public class ReportManuallyResponder extends FlowLogic<Void> {
         return null;
     }
 }
+```
 {{< /tab >}}
 
 {{< /tabs >}}
