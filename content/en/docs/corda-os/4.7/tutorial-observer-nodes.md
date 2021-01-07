@@ -189,24 +189,6 @@ public class ReportManuallyResponder extends FlowLogic<Void> {
 
 {{< /tabs >}}
 
-
-[AutoOfferFlow.kt](https://github.com/corda/corda/blob/release/os/4.7/samples/irs-demo/cordapp/workflows-irs/src/main/kotlin/net.corda.irs/flows/AutoOfferFlow.kt)
-
-In this example, the `AutoOfferFlow` is the business logic, and we define two very short and simple flows to send
-the transaction to the regulator. There are two important aspects to note here:
-
-
-* The `ReportToRegulatorFlow` is marked as an `@InitiatingFlow` because it will start a new conversation, context
-free, with the regulator.
-* The `ReceiveRegulatoryReportFlow` uses `ReceiveTransactionFlow` in a special way - it tells it to send the
-transaction to the vault for processing, including all states even if not involving our public keys. This is required
-because otherwise the vault will ignore states that don’t list any of the node’s public keys, but in this case,
-we do want to passively observe states we can’t change. So overriding this behaviour is required.
-
-If the states define a relational mapping (see [API: Persistence](api-persistence.md)) then the regulator will be able to query the
-reports from their database and observe new transactions coming in via RPC.
-
-
 ## How observer nodes operate
 
 * By default, vault queries do not differentiate between states you recorded as a participant/owner, and states you

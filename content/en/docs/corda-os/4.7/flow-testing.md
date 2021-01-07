@@ -31,7 +31,7 @@ means that unit testing a flow requires some infrastructure to provide lightweig
 
 The `MockNetwork` class provides this testing infrastructure layer; you can find this class in the `test-utils` module.
 
-A good example to examine for learning how to unit test flows is the `IOUTransferFlowTests` tests. This test file sits in our sample repositories under `Advanced/obligation-cordapp` and is available in both [Kotlin](https://github.com/corda/samples-kotlin/tree/master/Advanced/obligation-cordapp) and [Java](https://github.com/corda/samples-java/tree/master/Advanced/obligation-cordapp) versions.
+The `IOUTransferFlowTests` tests provide a good example for learning how to unit test flows. This test file sits in our sample repositories under `Advanced/obligation-cordapp` and is available in both [Kotlin](https://github.com/corda/samples-kotlin/tree/master/Advanced/obligation-cordapp) and [Java](https://github.com/corda/samples-java/tree/master/Advanced/obligation-cordapp) versions.
 
 Setup codes for both versions are shown here:
 
@@ -183,4 +183,4 @@ fun flowReturnsCorrectlyFormedPartiallySignedTransaction() {
 
 {{< /tabs >}}
 
-The logic of writing a tester is very intuitive. You are essentially mimicking what the flow does, composing the transaction, and collecting required signatures. In our example above, we first created the state attributes and package them into a state. Then we start the flow by a mock node. For the verification process, we take the obtained signed transaction and assert the required fields of the transaction as well as that of the input/output states. 
+Writing a test is an intuitive process. You are essentially mimicking what the flow does, composing the transaction, and collecting required signatures. In our example above, we first create the state attributes and package them into a state. Then we start the flow with a mock node. For the verification process, we take the obtained signed transaction and assert the required fields of the transaction as well as that of the input/output states.
