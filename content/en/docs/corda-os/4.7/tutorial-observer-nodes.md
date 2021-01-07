@@ -33,8 +33,6 @@ of digitally signed, de-duplicated reports useful for later processing.
 
 Adding support for observer nodes to your application is easy. The Trade reporting demo ([Kotlin](https://github.com/corda/samples-kotlin/tree/master/Features/observableStates-tradereporting), [Java](https://github.com/corda/samples-java/tree/master/Features/observablestates-tradereporting)) shows how to do so.
 
-Just define a new flow that wraps the `SendTransactionFlow/ReceiveTransactionFlow`, as follows:
-
 {{< tabs name="tabs-1" >}}
 {{< tab name="kotlin" >}}
 ```kotlin
