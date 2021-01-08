@@ -7,10 +7,10 @@ menu:
 tags:
 - Payments
 - Payments SDK
-title: Modulr Payment Rail (Pre-Alpha)
+title: Modulr Payment Rail Alpha
 weight: 200
 ---
-# Modulr Payments Rail (Pre-Alpha)
+# Modulr Payments Rail Alpha
 
 Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rails CorDapp, along with the [Payments-core CorDapp](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
 
@@ -32,7 +32,7 @@ A typical payment looks like this:
 
 4. The Modulr payments CorDapp sends an HTTP request containing the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
 
-5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of PROCESSED or CANCELLED. 
+5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of PROCESSED or CANCELLED.
 
 6. The response received from the Modulr API is converted from JSON to the equivalent ISO XML message.
 

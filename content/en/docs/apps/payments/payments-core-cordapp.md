@@ -3,14 +3,14 @@ date: '2020-01-08T09:59:25Z'
 menu:
   apps:
     parent: "payments"
-    identifier: payments-core-pre-alpha-cordapp
+    identifier: payments-core-alpha-cordapp
 tags:
 - Payments
 - Payments SDK
-title: Payments-core CorDapp (Pre-Alpha)
+title: Payments-core Alpha
 weight: 100
 ---
-# Payments-core CorDapp (pre-alpha stage)
+# Payments-core Alpha
 
 This version of the Payments-core CorDapp contains all the flows and actions that are required to make payments between nodes, and between nodes and external parties. This means you can you can write CorDapps that use these flows to facilitate payments, via a Payment Service Provider (PSP), on a Corda network.
 
@@ -29,7 +29,7 @@ A typical payment flow using this CorDapp looks like this:
 This early version of the CorDapp is to be used in an experimental capacity. Before investing in commercial development based on this feature, you should get in touch with your Corda team to discuss future changes as the architecture and functionality is developed.
 {{< /warning >}}
 
-### What you can do with the Pre-Alpha version of this CorDapp
+### What you can do with the Alpha version of this feature
 
 In trial conditions, you can create a CorDapp to:
 
@@ -40,7 +40,7 @@ In trial conditions, you can create a CorDapp to:
 
 This functionality frees you from considering the specifics of every PSP/payment rail that your customers may want to use.
 
-To use this pre-alpha feature:
+To use this Alpha feature:
 
 1. Install the Payments-core CorDapp project.
 2. Use the Mock Payment Client project to create a CorDapp.

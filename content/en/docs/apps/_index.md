@@ -8,16 +8,16 @@ menu:
     weight: -265
 project: apps
 section_menu: apps
-title: Reference Applications
+title: Apps
 version: 'apps'
 ---
-# Reference Applications
+# Featured Apps
 
-Reference Applications allow you to explore new possibilities on Corda - with fully formed features for reference. You can use these custom-made demos, trial solutions, and pre-Alpha features to by-pass development work, allowing you to focus on your vision for your products.
+These new and early-version apps allow you to explore new possibilities on Corda. You can use them to carry out trial development work, and refine your vision for developing on Corda.
 
-Within the documentation, you will find set-up guides, tips and operational instructions for a growing list of applications made for reference and exploration.
+Within the documentation, you will find set-up guides, tips and operational instructions for a growing list of applications made for exploration and very early adoption.
 
 Explore:
 
-* Bank in a box - a complete retail banking concept that can be hosted on a Corda network.
-* Payments on Corda - early sight of the possibilities of making payments in and out of a Corda network.
+* [Bank in a box](./bank-in-a-box/getting-started) - a complete retail banking concept that can be hosted on a Corda network.
+* [Corda Payments Alpha](./payments/payments-index) - early sight of the possibilities of making payments in and out of a Corda network.
