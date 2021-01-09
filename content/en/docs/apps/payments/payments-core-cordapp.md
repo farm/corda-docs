@@ -12,9 +12,9 @@ weight: 100
 ---
 # Payments-core Alpha
 
-This version of the Payments-core CorDapp contains all the flows and actions that are required to make payments between nodes, and between nodes and external parties. This means you can you can write CorDapps that use these flows to facilitate payments, via a Payment Service Provider (PSP), on a Corda network.
+The Payments-core CorDapp contains all the flows and actions that are required to make payments between nodes, and between nodes and external parties. This means you can write CorDapps that use these flows to facilitate payments, via a Payment Service Provider (PSP), on a Corda network.
 
-In this version of the Payments-core CorDapp, you can theoretically create payments via integration with any desired PSP. This is made possible using the ISO 20022 messaging standard, which is marshalled from raw XML by the Payments-core CorDapp as the API connection is made to the PSP. The best way to see this in action is to make use of the Mock Payment Rail feature, included in the project.
+With this version of the Payments-core CorDapp, you can theoretically create payments via integration with any desired PSP. This is made possible using the ISO 20022 messaging standard, which is marshalled from raw XML by the Payments-core CorDapp as the API connection is made to the PSP. The best way to see this in action is to make use of the Mock Payment Rail feature, included in the project.
 
 A typical payment flow using this CorDapp looks like this:
 
