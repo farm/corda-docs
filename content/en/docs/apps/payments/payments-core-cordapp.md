@@ -134,7 +134,7 @@ task integrationTest(type: Test, dependsOn: []) {
 
 3. Write an implementation of `PaymentRailServiceInterface` for the respective PSP; this is `MockRailService` in `mock-payment-rail`.  This will subsequently require implementing flows for initiating, polling, and making payments between parties.
 
-4. Build an idempotent action for initiating a payment and a non-idempotent action for querying a payment, all through the PSP.  This can be done by extending the abstract classes discussed in the External Action Manager section above. These actions are triggered during a flow when a node needs to communicate with the client that you built in step 1.
+4. Build an idempotent action for initiating a payment and a non-idempotent action for querying a payment, all through the PSP.  This can be done by extending the abstract classes discussed in the External Action Manager section below. These actions are triggered during a flow when a node needs to communicate with the client that you built in step 1.
 
 5. Navigate to the `build.gradle` for the `payments-cordapp`, in the root of the project.  Set the extra property `nodeConfig` to the following string:
 
@@ -262,33 +262,7 @@ This flow is available to the node operator.
 `flow start ExternalDestinationPaymentFlow designatedPaymentRail: <Payment Rail>, paymentAmount: <Payment Amount>, destination: <UUID of destination account>, clientDeduplicationId: <provided clientDeduplicationId>`
 
 
-#### Parameters
 
-* `initiatingParty` - The legal identity of the node that initiated the payments being queried.
-* `beneficiaryParty` - The legal identity of the node that received the payments being queried.
-
-#### Command Line Interface
-
-* `flow start GetPaymentRecordsFlow initiatingParty: <X500 Name of initiatingParty>, beneficiaryParty: <X500 Name of beneficiary>`
-
-Example: `flow start GetPaymentRecordsFlow initiatingParty: "O=partyA,L=New York,C=US", beneficiaryParty: "O=partyB,L=London,C=GB"`
-
-
-#### Return Type
-
-* `List<PaymentRecord>` - This flow will return a list of type `PaymentRecord`.
-
-### `NegotiatePaymentRailFlow`
-
-#### Overview
-
-Facilitates negotiation between two nodes to determine the appropriate payment rail through which the initiated payment should be routed.
-
-Example: `flow start ExternalDestinationPaymentFlow designatedPaymentRail: MOCK, paymentAmount: 12 GBP, destination: "2fea2970-d82a-4ff3-be2b-ca95eb0138b0",  clientDeduplicationId: “4”`
-
-#### Exceptions
-
-`PaymentExecutionException` - This exception will be thrown if the specified `designatedPaymentRail`
 
 ### `GetPaymentRecordsFlow`
 
@@ -335,6 +309,32 @@ Example: `flow start PaymentFlow isoMessage: <XML formatted in ISO20022>, client
 
 `PaymentExecutionException` - This exception will be thrown if the `selectedPaymentRail` is not supported.
 
+### GetAccountFlow
+
+A flow used to retrieve an ISO20022 Return Account message with information concerning a specific account and it's balance.
+
+#### Parameters
+
+* `accountIdentifier` - An data class which contains the information required to create an ISO20022 message.
+* `isoMessage` - An ISO formatted GetAccount message with all necessary query information.
+* `paymentRail` - A string indicating with payment rail should be queried.
+
+#### Return Type
+
+`String` - This flow will return a ISO20022 formatted ReturnAccount message.
+
+### RetrievePaymentByIdFlow
+
+A flow that retrieves a ISO20022 message containing information about a payment with the specified ID.
+
+#### Parameters
+
+* `paymentId` - The ID associated with the payment that was previously initiated.
+* `selectedPaymentRail` - The payment rail through which the payment was made.
+
+#### Return Type
+
+`String` - This flow will return a ISO20022 formatted message with information about the specified payment.
 ### NegotiatePaymentRailFlow
 
 Facilitates negotiation between two nodes to determine the appropriate payment rail through which the initiated payment should be routed.
@@ -362,7 +362,8 @@ A counter flow in which the responding node analyzes the payments rails suggeste
 
 #### Return Type
 
-`String` - This flow will request a list of enabled payment rails from the counterparty, filter the list to determine which payment rails are viable, and return the negotiated rail.
+`Unit / Void` - None.
+
 
 #### Exceptions
 
