@@ -19,9 +19,9 @@ Corda Payments, including payments on the Modulr payment rail, is an early relea
 There are two main CorDapps in this version of Corda Payments:
 
 * Payments-core - the main CorDapp that enables all flows required to make payments to a chosen PSP.
-* Modulr Payment Rail CorDapp - a ready-to-ty CorDapp that allows you to create payments using the Modulr PSP.
+* Modulr Payment Rail CorDapp - a ready-to-try CorDapp that allows you to create payments using the Modulr PSP.
 
-There are likely to be substantial architectural improvements as development of these features accelerate towards commercial readiness. This is an opportunity for early adopters to test Corda Payments and engage with the concepts before investing in a commercial payments solution.
+There are likely to be substantial architectural improvements as development of these features accelerates towards commercial readiness. This is an opportunity for early adopters to test Corda Payments and engage with the concepts before investing in a commercial payments solution.
 
 Create and test a theoretical payments solution using [Payments-core](payments-core-cordapp).
 

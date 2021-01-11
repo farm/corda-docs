@@ -81,16 +81,16 @@ The actions package contains idempotent and non-idempotent actions to communicat
 `external-action-manager`.
 
 `ModulrAccountActions`
-- `GetModulrAccounts` extends `Action`
-- `CreateModulrAccountByCustomer` extends `IdempotentAction`
+- `GetModulrAccounts` extends `Action`.
+- `CreateModulrAccountByCustomer` extends `IdempotentAction`.
 
 `ModulrCustomerActions`
-- `GetModulrCustomers` extends `Action`
+- `GetModulrCustomers` extends `Action`.
 
 `ModulrPaymentAction`
-- `InitiateModulrPayment` extends `IdempotentAction`
-- `GetModulrPaymentByDeduplicationId` extends `Action`
-- `GetModulrPaymentByID` extends `Action`
+- `InitiateModulrPayment` extends `IdempotentAction`.
+- `GetModulrPaymentByDeduplicationId` extends `Action`.
+- `GetModulrPaymentByID` extends `Action`.
 
 
 ## Flows
@@ -123,7 +123,7 @@ This flow initiates a payment using the Modulr payment rail.  It will construct 
 #### Parameters
 
 * `paymentAmount` - The amount of the payment to be initiated, denominated in a specific currency.
-* `destination` - Information surrounds the destination (beneficiary) of the payment.
+* `destination` - Information surrounding the destination (beneficiary) of the payment.
 * `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication.
 
 #### Return type
@@ -142,11 +142,11 @@ This flow gets the account balance for the specified account.
 
 #### Parameters
 
-* `isoMessage` - A XML message formatted in ISO20022.
+* `isoMessage` - An XML message formatted in ISO20022.
 
 #### Return type
 
-* `String` - This flow will return a XML `String` representing the balance of the specified account.
+* `String` - This flow will return an XML `String` representing the balance of the specified account.
 
 ### ModulrPaymentPollingFlow
 
@@ -190,7 +190,7 @@ To set up a demo payment with  UI:
 The frontend currently allows you to do two things:
 
 * Make a payment.
-* Get the status of a payment status.
+* Get the status of a payment.
 
 You must log in as a Party to make a payment or get the status of a payment.  After logging in, you must make a payment before using `GetPayment`. The payment will take 1.9 minutes, almost exactly. The only supported currency is EUR.
 
@@ -207,7 +207,7 @@ You can now use the value of `<MsgId>` (a field in the XML payload) to get the s
 
 ## Creating and installing the CorDapp `.jar` file
 
-Once your dependencies are set correctly, you can build your CorDapp `.jar` file(s) using the Gradle `jar` task
+Once your dependencies are set correctly, you can build your CorDapp `.jar` file(s) using the Gradle `jar` task:
 
 Unix/Mac OSX: `./gradlew jar`
 

@@ -19,5 +19,5 @@ Within the documentation, you will find set-up guides, tips, and operational ins
 
 Explore:
 
-* [Bank in a box](./bankinabox/getting-started) - a complete retail banking concept that can be hosted on a Corda network.
+* [Bank in a Box](./bankinabox/getting-started) - a complete retail banking concept that can be hosted on a Corda network.
 * [Corda Payments Alpha](./payments/payments-index) - early sight of the possibilities of making payments in and out of a Corda network.
