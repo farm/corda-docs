@@ -15,7 +15,7 @@ version: 'apps'
 
 These new and early-version apps allow you to explore new possibilities on Corda. You can use them to carry out trial development work, and refine your vision for developing on Corda.
 
-Within the documentation, you will find set-up guides, tips and operational instructions for a growing list of applications made for exploration and very early adoption.
+Within the documentation, you will find set-up guides, tips, and operational instructions for a growing list of applications made for exploration and very early adoption.
 
 Explore:
 

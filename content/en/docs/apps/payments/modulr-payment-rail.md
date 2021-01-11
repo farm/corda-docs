@@ -7,7 +7,7 @@ menu:
 tags:
 - Payments
 - Payments SDK
-title: Modulr Payment Rail Alpha
+title: Modulr Payments Rail Alpha
 weight: 200
 ---
 # Modulr Payments Rail Alpha
@@ -15,7 +15,7 @@ weight: 200
 Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rail CorDapp, along with [Payments-core](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
 
 {{< warning >}}
-This version of the Modulr Payments Rail is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
+This version of the Modulr Payments Rail solution is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
 {{< /warning >}}
 
 ## How this works with the Payments-core CorDapp
@@ -30,24 +30,24 @@ A typical payment looks like this:
 
 3. The ISO 20022 payload sent to Modulr is stored.
 
-4. The Modulr payments CorDapp sends an HTTP request containing the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
+4. The Modulr Payment Rail CorDapp sends an HTTP request containing the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
 
-5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of PROCESSED or CANCELLED.
+5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of either `PROCESSED` or `CANCELLED`.
 
 6. The response received from the Modulr API is converted from JSON to the equivalent ISO XML message.
 
 ## Project structure
 
-Use this documentation to explore the `modulr-rail` module. You should also be familiar with the Payments-core CorDapp before using this rail.
+Use this documentation to explore the `modulr-rail` module. You should also be familiar with the [Payments-core CorDapp](payments-core-cordapp) before using this rail.
 
 In the Modulr payments rail main submodule, there are two packages:
 
 * Client - which contains the `ModulrClient` class - a proxy to the Modulr API.
 * Rail - which contains sub-projects with the actions, flows, and services required to make payments from a Corda node via the Modulr PSP.
 
-### Client Module
+### Client module
 
-The `com.r3.payments.modulr.client` package contains the `ModulrClient` class, a wrapper class which acts as a proxy to the Modulr API.  The `client` obtains data from the Modulr API via HTTP calls to REST endpoints.
+The `com.r3.payments.modulr.client` package contains the `ModulrClient` class, a wrapper class which acts as a proxy to the Modulr API. The `client` obtains data from the Modulr API via HTTP calls to REST endpoints.
 
 This package contains Java Object representations of JSON entities which may be serialized to JSON to be sent via HTTP to the Modulr API.  
 
@@ -68,15 +68,17 @@ It also contains classes for:
 
 ### ModulrService
 
-`ModulrService`, an implementation of `PaymentRailServiceInterface` from [Payments-core CorDapp](payments-core-cordapp), provides access to a `ModulrClient` that will be shared across flows -- executing actions that require interaction with the Modulr API.  This abstraction provides a safe and resource efficient way for a Corda node to communicate with the Modulr API.
+`ModulrService`, an implementation of `PaymentRailServiceInterface` from [Payments-core CorDapp](payments-core-cordapp), provides access to a `ModulrClient` that will be shared across flows - executing actions that require interaction with the Modulr API. This abstraction provides a safe and resource-efficient way for a Corda node to communicate with the Modulr API.
 
 This service is initialized during node startup with environment variables retrieved through the configuration of the `payments-core` CorDapp. This includes generic information concerning the amount and currency types in which payments may be made using this rail, as well as specific information required for communicating with the Modulr API - including the API key and API secret.
 
 ## Actions
 
-Learn more about `Actions`/`IdempotentAction` and `external-action-manager` here: (link to external action manager section in `payments-core CorDapp`)
+Learn more about `Actions`/`IdempotentAction` and `external-action-manager` in the [Payments-core documentation](payments-core-cordapp). 
 
-The actions package contains idempotent and non-idempotent actions to communicate with the Modulr API using the `ModulrClient`.  The following is a list of all the classes that contain actions used in this CorDapp followed by the abstract class which is extended. `external-action-manger`.
+The actions package contains idempotent and non-idempotent actions to communicate with the Modulr API using the `ModulrClient`. The following is a list of all the classes that contain actions used in this CorDapp followed by the abstract class which is extended:
+
+`external-action-manager`.
 
 `ModulrAccountActions`
 - `GetModulrAccounts` extends `Action`
@@ -93,17 +95,17 @@ The actions package contains idempotent and non-idempotent actions to communicat
 
 ## Flows
 
-The flows package contains flows that allow a node to send a payment to another node, an external destination (not a corda node), and a flow to retrieve the status of a payment --  all using the Modulr API.
+The flows package contains flows that allow a node to send a payment to another node, an external destination (not a Corda node), and a flow to retrieve the status of a payment - all using the Modulr API.
 
 Respective flows trigger an action which in turn communicate with the Modulr API through the `ModulrClient`.  The following is a list of flows used by modulr-rails-cordapp.
 
 {{< note >}}
-These are not to be used directly by the developer, they are only accessible through the payments-core CorDapp.  
+These are not to be used directly by the developer, they are only accessible through the Payments-core CorDapp.  
 {{< /note >}}
 
 ### ModulrISOPaymentFlow
 
-Makes a payment using the Modulr api and client to a destination not represented by a corda node.This flow executes an `InitiateModulrPayment` after constructing a `PaymentInitiationPayload` from a received `isoMessage`. It will then continue to poll for the results of the initiated payment and return the payment entity once it has been processed.
+Makes a payment using the Modulr API and client to a destination not represented by a Corda node. This flow executes an `InitiateModulrPayment` after constructing a `PaymentInitiationPayload` from a received `isoMessage`. It will then continue to poll for the results of the initiated payment and return the payment entity once it has been processed.
 
 #### Parameters
 
@@ -116,7 +118,7 @@ Makes a payment using the Modulr api and client to a destination not represented
 
 ### ModulrPaymentInitiationFlow
 
-This flow initiates a payment using the Modulr payment rail.  It will construct and execute an `InitiateModulrPayment` action using the provided `Destination` to create a modulr specific `PaymentInitiationPayload` as required input.
+This flow initiates a payment using the Modulr payment rail.  It will construct and execute an `InitiateModulrPayment` action using the provided `Destination` to create a Modulr-specific `PaymentInitiationPayload` as required input.
 
 #### Parameters
 
@@ -152,7 +154,7 @@ This flow executes a `GetModulrPaymentByID` action and is used as a subflow by s
 
 #### Parameters
 
-* `paymentId` - The ID of the payment that has been submitted for processing by the Modulr payment rail
+* `paymentId` - The ID of the payment that has been submitted for processing by the Modulr payments rail.
 
 #### Return type
 
@@ -190,7 +192,7 @@ The frontend currently allows you to do two things:
 * Make a payment.
 * Get the status of a payment status.
 
-You must log in as a Party to make a payment or get the status of a payment.  After logging in, you must make a payment before using GetPayment. The payment will take 1.9 minutes, almost exactly. The only supported currency is EUR.
+You must log in as a Party to make a payment or get the status of a payment.  After logging in, you must make a payment before using `GetPayment`. The payment will take 1.9 minutes, almost exactly. The only supported currency is EUR.
 
 To use the console to make a payment:
 
@@ -203,20 +205,20 @@ The result of the payment will be seen: A XML payload representing a payment sta
 
 You can now use the value of `<MsgId>` (a field in the XML payload) to get the status of the payment with `GetPayment`.
 
-## Creating and Installing the CorDapp Jar
+## Creating and installing the CorDapp `.jar` file
 
-Once your dependencies are set correctly, you can build your CorDapp JAR(s) using the Gradle jar task
+Once your dependencies are set correctly, you can build your CorDapp `.jar` file(s) using the Gradle `jar` task
 
 Unix/Mac OSX: `./gradlew jar`
 
 Windows: `gradlew.bat jar`
 
-Each of the project’s modules will be compiled into its own CorDapp JAR. You can find these CorDapp JARs in the build/libs folders of each of the project’s modules.
+Each of the project’s modules will be compiled into its own CorDapp `.jar` file. You can find these CorDapp `.jar` files in the `build/libs` folders of each of the project’s modules.
 
 {{< note >}}
-The hash of the generated CorDapp JAR is not deterministic, as it depends on variables such as the timestamp at creation. Nodes running the same CorDapp must therefore ensure they are using the exact same CorDapp JAR, and not different versions of the JAR created from identical sources.
+The hash of the generated CorDapp `.jar` file is not deterministic, as it depends on variables such as the timestamp at creation. Nodes running the same CorDapp must therefore ensure they are using the exact same CorDapp `.jar` file, and not different versions of the `.jar` file created from identical sources.
 
-The filename of the JAR must include a unique identifier to deduplicate it from other releases of the same CorDapp. This is typically done by appending the version string to the CorDapp’s name. This unique identifier should not change once the JAR has been deployed on a node. If it does, make sure no one is relying on FlowContext.appName in their flows (see Versioning).
+The file name of the `.jar` file must include a unique identifier to deduplicate it from other releases of the same CorDapp. This is typically done by appending the version string to the CorDapp’s name. This unique identifier should not change once the `.jar` file has been deployed on a node. If it does change, make sure no one is relying on `FlowContext.appName` in their flows (see Versioning).
 {{< /note >}}
 
-At start-up, nodes will load any CorDapps present in their cordapps folder. In order to install a CorDapp on a node, the CorDapp JAR must be added to the <node_dir>/cordapps/ folder (where node_dir is the folder in which the node’s JAR and configuration files are stored) and the node restarted.
+At start-up, nodes will load any CorDapps present in their `cordapps` folder. In order to install a CorDapp on a node, the CorDapp `.jar` file must be added to the `<node_dir>/cordapps/` folder (where `node_dir` is the folder in which the node’s `.jar` file and configuration files are stored) and the node must be restarted.
