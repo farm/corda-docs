@@ -180,7 +180,7 @@ task integrationTest(type: Test, dependsOn: []) {
 
 The project contains five modules:
 
-* `payments-core` - provides the standard API and deals with messages in the ISO 20022 messaging Standard, and Integration layer (cordapp that communicates with PSP), which converts the standard ISO messages into PSP specific formats and handle communication and authorization with the specific PSP.  
+* `payments-core` - provides the standard API and deals with messages in the ISO 20022 messaging standard, and Integration layer (cordapp that communicates with PSP), which converts the standard ISO messages into PSP specific formats and handle communication and authorization with the specific PSP.  
 * `external-action-manager` - used to manage and store asynchronous operations that occur outside of your network - like initiating payment via a PSP.
 * `iso-xml-utils` - used to marshall and unmarshall raw XML into ISO 20022. ISO 20022 is the international messaging standard used by PSPs globally.
 * `mock-payment-rail` - a test payment rail that allows you to quickly build and deploy a trial payment solution.
@@ -209,7 +209,7 @@ The `iso-xml-utils` module contains various utilities that marshall a raw XML to
 Unmarshalling (XML -> ISO POJO)
 
 1. The raw XML is converted into a POJO using JAXB, this includes a syntactic validation of the XML using xsd schemes distributed by the ISO 20022 Registration Authority (RA)
-2. The POJO representing the ISO message under goes syntactic, semantic and scope validations.
+2. The POJO representing the ISO message under goes syntactic, semantic, and scope validations.
 
 Marshalling (ISO POJO -> XML)
 
@@ -291,7 +291,7 @@ This flow is available to the node operator.
 
 #### Parameters
 
-* `isoMessage` - A XML message formatted in ISO20022.
+* `isoMessage` - An XML message formatted in ISO20022.
 * `selectedPaymentRail` - A supported payment rail.
 * `clientDeduplicationId` - An optional ID that will be used to deduplicate payments initiated by the client.
 
@@ -311,21 +311,21 @@ Example: `flow start PaymentFlow isoMessage: <XML formatted in ISO20022>, client
 
 ### GetAccountFlow
 
-A flow used to retrieve an ISO20022 Return Account message with information concerning a specific account and it's balance.
+A flow used to retrieve an ISO20022 ReturnAccount message with information concerning a specific account and its balance.
 
 #### Parameters
 
-* `accountIdentifier` - An data class which contains the information required to create an ISO20022 message.
+* `accountIdentifier` - A data class which contains the information required to create an ISO20022 message.
 * `isoMessage` - An ISO formatted GetAccount message with all necessary query information.
 * `paymentRail` - A string indicating with payment rail should be queried.
 
 #### Return type
 
-`String` - This flow will return a ISO20022 formatted ReturnAccount message.
+`String` - This flow will return an ISO20022 formatted ReturnAccount message.
 
 ### RetrievePaymentByIdFlow
 
-A flow that retrieves a ISO20022 message containing information about a payment with the specified ID.
+A flow that retrieves an ISO20022 message containing information about a payment with the specified ID.
 
 #### Parameters
 
@@ -334,14 +334,14 @@ A flow that retrieves a ISO20022 message containing information about a payment 
 
 #### Return type
 
-`String` - This flow will return a ISO20022 formatted message with information about the specified payment.
+`String` - This flow will return an ISO20022 formatted message with information about the specified payment.
 ### NegotiatePaymentRailFlow
 
 Facilitates negotiation between two nodes to determine the appropriate payment rail through which the initiated payment should be routed.
 
 #### Parameters
 
-* `counterParty` - The legal identity of the counter-party with whom we should be negotiating payment details.
+* `counterParty` - The legal identity of the counter-party with whom you should be negotiating payment details.
 * `amount` - An amount representing the amount of the payment to be initiated.
 
 #### Return type
@@ -371,7 +371,7 @@ A counter flow in which the responding node analyzes the payments rails suggeste
 
 ### `NotifyCounterpartyFlow`
 
-This flows sends a completed payment id to the counter party.
+This flows sends a completed payment ID to the counter party.
 
 #### Parameters
 
@@ -392,7 +392,7 @@ This flows receives a completed payment record from the counter party and persis
 
 #### Parameters
 
-`session` - The flow session provided by Corda, which we will use to respond to the initiating party..
+`session` - The flow session provided by Corda, which we will use to respond to the initiating party.
 
 #### Return type
 
@@ -424,7 +424,7 @@ Example: `flow start PaymentFlow beneficiaryParty: "O=partyB,L=New York,C=US", p
 
 The API endpoints are conceptually split into three categories:
 
-* **Outgoing** - where an ISO message is sent from `payments-core`
+* **Outgoing** - where an ISO message is sent from `payments-core`.
 * **Incoming** - where an ISO message is received by the `payments-core`.
 * **Admin** - which provides the functionality to query the stored message records.
 
@@ -439,18 +439,18 @@ The ISO messages in scope are:
 
 ### XML <-> POJO conversions
 
-The ISO 20022 message formats are described in a set of .xsd files published by the ISO 20022 Registration Authority (RA).
+The ISO 20022 message formats are described in a set of `.xsd` files published by the ISO 20022 Registration Authority (RA).
 
 The JAXB Library provides functionality to generate the POJO classes from the ISO xsd files.  Given the xsds, the marshalling/ unmarshalling of the ISO XML from/to POJOs is handled by the JAXB library.
 
-As part of the marshalling/ unmarshalling processes the XMLs are checked to make sure they are syntactically correct per the xsds. This ensures that all XML elements included are valid components of the overarching message set. It also enforces rules about order, required fields, duplicated elements and other more nuanced payment details.
+As part of the marshalling/ unmarshalling processes the XMLs are checked to make sure they are syntactically correct per the xsds. This ensures that all XML elements included are valid components of the overarching message set. It also enforces rules about order, required fields, duplicated elements, and other more nuanced payment details.
 
 ### Validations
 
 There are 3 types of validations:
 
 * **Code Set validations**
-  * For some elements in the XML, the xsd does not define the allowed values, instead this is delegated to a separately defined set of allowed codes published by swift.
+  * For some elements in the XML, the xsd does not define the allowed values, instead this is delegated to a separately defined set of allowed codes published by Swift.
   * The Code set valdations ensure that the codes in the XML/ POJO exist in the Swift Code set
 * **Scope Validations** - Scope validation limits the number of optional fields / elements inside of the message that can be filled in.
 * **Semantic validations**  - The ISO 20022 Registration Authority (RA) publish a set of semantic rules for each message type. This might take the form of: if element A is populated
@@ -458,24 +458,24 @@ then element B must also be populated.
 
 Validations are implemented as Kotlin classes which implement one of the Validator interfaces:
 
-* SemanticValidator -> defines validateSemantics() function
-* CodeSetValidator -> defines validateCodeSets() function
-* ScopeValidator -> defines validateScope() function
+* `SemanticValidator` -> defines `validateSemantics()` function.
+* `CodeSetValidator` -> defines `validateCodeSets()` function.
+* `ScopeValidator` -> defines `validateScope()` function.
 
 There will be one of each type of validator for every ISO message type. Each validator will list the set of validation rules that must be applied for that type of validation for that type of ISO message.
 
 The validation rules are Kotlin classes which will implement one of the following interfaces:
 
-* SemanticRule -> defines validateSemanticRule() function
-* ScopeRestriction -> defines validateScopeRestrition() function
-* CodeSetCheck -> defines validateCodeSet() function
+* `SemanticRule` -> defines `validateSemanticRule()` function
+* `ScopeRestriction` -> defines `validateScopeRestrition()` function
+* `CodeSetCheck` -> defines `validateCodeSet()` function
 
 The rules are expressed as Kotlin code operating on the POJO representation of the message which throws an exception if the validation fails.
 
 
 ## Mock payment rail
 
-The `mock-payment-rail` module contains two sub-packages: `actions` and `flows`
+The `mock-payment-rail` module contains two sub-packages: `actions` and `flows`.
 
 - `actions` contains two actions: `InitiateMockRailPayment` and `GetMockRailPaymentByPaymentId`, each triggered when a node needs to make a request to the MockRail API during a flow.
 
@@ -516,7 +516,7 @@ This flow facilitates the complete process of making a payment to another Corda 
 
 * `party` - The party that will be the beneficiary of the payment.
 * `paymentAmount` - The amount of the payment to be made denominated in the specified currency.
-* `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication
+* `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication.
 
 #### Return type
 
@@ -528,7 +528,7 @@ This flows responds to an initiated `MockRailPaymentFlow` with an appropriate `d
 
 #### Parameters
 
-* `session` - The flow session provided by Corda which we will use to respond to the initiating party.
+* `session` - The flow session provided by Corda which you will use to respond to the initiating party.
 
 #### Return type
 
@@ -543,7 +543,7 @@ This flow initiates a payment using the MockRail payment rail.  It will construc
 #### Parameters
 
 * `paymentAmount` - The amount of the payment to be initiated, denominated in a specific currency.
-* `destination` - UniqueIdentifier of beneficiary
+* `destination` - UniqueIdentifier of beneficiary.
 
 #### Return type
 
@@ -575,7 +575,7 @@ This flow executes a `GetMockRailPaymentByPaymentId` action and is used as a sub
 
 ## Create and Install the CorDapp Jar
 
-Once your dependencies are set correctly, you can build your CorDapp JAR(s) using the Gradle jar task
+Once your dependencies are set correctly, you can build your CorDapp `.jar`s using the Gradle jar task:
 
 Unix/Mac OSX: `./gradlew jar`
 
@@ -585,13 +585,13 @@ Each of the project’s modules will be compiled into its own CorDapp JAR. You c
 
 The hash of the generated CorDapp JAR is not deterministic, as it depends on variables such as the timestamp at creation. Nodes running the same CorDapp must therefore ensure they are using the exact same CorDapp JAR, and not different versions of the JAR created from identical sources.
 
-The filename of the JAR must include a unique identifier to deduplicate it from other releases of the same CorDapp. This is typically done by appending the version string to the CorDapp’s name. This unique identifier should not change once the JAR has been deployed on a node. If it does, make sure no one is relying on FlowContext.appName in their flows (see Versioning).
+The filename of the JAR must include a unique identifier to deduplicate it from other releases of the same CorDapp. This is typically done by appending the version string to the CorDapp’s name. This unique identifier should not change once the JAR has been deployed on a node. If it does, make sure no one is relying on `FlowContext.appName` in their flows (see Versioning).
 
-At start-up, nodes will load any CorDapps present in their cordapps folder. In order to install a CorDapp on a node, the CorDapp JAR must be added to the <node_dir>/cordapps/ folder (where node_dir is the folder in which the node’s JAR and configuration files are stored) and the node restarted.
+At start-up, nodes will load any CorDapps present in their cordapps folder. In order to install a CorDapp on a node, the CorDapp JAR must be added to the `<node_dir>/cordapps/` folder (where `node_dir` is the folder in which the node’s JAR and configuration files are stored) and the node restarted.
 
 ## Run the CorDapp
 
 1. Open up a terminal and navigate to the root of the `payments-cordapp` directory.
-2. Run the following command: `./gradlew clean deployNodes`
-3. After the project has been built succesfully, run the following command to run the nodes: `build/nodes/runnodes`
+2. Run the following command: `./gradlew clean deployNodes`.
+3. After the project has been built succesfully, run the following command to run the nodes: `build/nodes/runnodes`.
 4. For testing purposes, you can run `./gradlew test` to run all the tests that come with the `payments-cordapp`.
