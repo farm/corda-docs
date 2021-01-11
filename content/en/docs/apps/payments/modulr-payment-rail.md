@@ -7,24 +7,24 @@ menu:
 tags:
 - Payments
 - Payments SDK
-title: Modulr Payments Rail Alpha
+title: Modulr Payment Rail CorDapp Alpha
 weight: 200
 ---
-# Modulr Payments Rail Alpha
+# Modulr Payment Rail CorDapp Alpha
 
-Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rail CorDapp, along with [Payments-core](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
+Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payment Rail CorDapp, along with [Payments-core](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
 
 {{< warning >}}
-This version of the Modulr Payments Rail solution is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
+This version of the Modulr Payment Rail CorDapp is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
 {{< /warning >}}
 
 ## How this works with the Payments-core CorDapp
 
-This payment rail uses the Payments-core CorDapp to make payments and retrieve payment data.
+This payment uses the Payments-core CorDapp to make payments and retrieve payment data.
 
 A typical payment looks like this:  
 
-1. The Modulr payments CorDapp connects to the Modulr API.
+1. The Modulr Payment Rail CorDapp connects to the Modulr API.
 
 2. The Modulr CorDapp extracts the necessary information from the provided ISO20022 formatted message and constructs a JSON payload as specified by Modulr.
 
@@ -32,7 +32,7 @@ A typical payment looks like this:
 
 4. The Modulr Payment Rail CorDapp sends an HTTP request containing the specified payment initiation payload to the Modulr API. Modulr provides different environment URLs which we specify in the node's configuration.
 
-5. The Modulr payments CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of either `PROCESSED` or `CANCELLED`.
+5. The Modulr Payment Rail CorDapp polls the status of the payment through the Modulr API until Modulr returns a final state of either `PROCESSED` or `CANCELLED`.
 
 6. The response received from the Modulr API is converted from JSON to the equivalent ISO XML message.
 
@@ -40,7 +40,7 @@ A typical payment looks like this:
 
 Use this documentation to explore the `modulr-rail` module. You should also be familiar with the [Payments-core CorDapp](payments-core-cordapp) before using this rail.
 
-In the Modulr payments rail main submodule, there are two packages:
+In the Modulr Payment Rail main submodule, there are two packages:
 
 * Client - which contains the `ModulrClient` class - a proxy to the Modulr API.
 * Rail - which contains sub-projects with the actions, flows, and services required to make payments from a Corda node via the Modulr PSP.
@@ -74,7 +74,7 @@ This service is initialized during node startup with environment variables retri
 
 ## Actions
 
-Learn more about `Actions`/`IdempotentAction` and `external-action-manager` in the [Payments-core documentation](payments-core-cordapp). 
+Learn more about `Actions`/`IdempotentAction` and `external-action-manager` in the [Payments-core documentation](payments-core-cordapp).
 
 The actions package contains idempotent and non-idempotent actions to communicate with the Modulr API using the `ModulrClient`. The following is a list of all the classes that contain actions used in this CorDapp followed by the abstract class which is extended:
 
@@ -154,7 +154,7 @@ This flow executes a `GetModulrPaymentByID` action and is used as a subflow by s
 
 #### Parameters
 
-* `paymentId` - The ID of the payment that has been submitted for processing by the Modulr payments rail.
+* `paymentId` - The ID of the payment that has been submitted for processing by the Modulr Payment Rail CorDapp.
 
 #### Return type
 
@@ -168,7 +168,7 @@ This flow executes a `GetModulrPaymentByID` action and is used as a subflow by s
 
 ## Frontend Demo
 
-To see how a payments solution might be presented to users on your network, you can use this demo console for Modulr payments on Corda.
+To see how a payments solution might be presented to users on your network, you can use this demo console for the Modulr Payment Rail on Corda.
 
 Please follow these instructions carefully as this is an experimental web application, and you may encounter bugs:
 
