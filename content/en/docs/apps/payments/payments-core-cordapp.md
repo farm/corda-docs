@@ -253,7 +253,7 @@ This flow is available to the node operator.
 * `destination` - The details of the destination for the payment, the type of which is determined by the specified `designatedPaymentRail`.
 * `clientDeduplicationId` - An optional ID that will be used to deduplicate payments initiated by the client.
 
-#### Return Type
+#### Return type
 
 * `PaymentRecord` - This flow returns the `PaymentRecord` which is persisted to the DB.
 
@@ -279,7 +279,7 @@ This flow returns all payment records in the database associated with the provid
 
 Example: `flow start GetPaymentRecordsFlow initiatingParty: "O=partyA,L=New York,C=US", beneficiaryParty: "O=partyB,L=London,C=GB"`
 
-#### Return Type
+#### Return type
 
 `List<PaymentRecord>` - This flow will return a list of type `PaymentRecord`.
 
@@ -295,7 +295,7 @@ This flow is available to the node operator.
 * `selectedPaymentRail` - A supported payment rail.
 * `clientDeduplicationId` - An optional ID that will be used to deduplicate payments initiated by the client.
 
-#### Return Type
+#### Return type
 
 `PaymentRecord` - This flow will return the persisted `IsoMessageRecord` object.
 
@@ -319,7 +319,7 @@ A flow used to retrieve an ISO20022 Return Account message with information conc
 * `isoMessage` - An ISO formatted GetAccount message with all necessary query information.
 * `paymentRail` - A string indicating with payment rail should be queried.
 
-#### Return Type
+#### Return type
 
 `String` - This flow will return a ISO20022 formatted ReturnAccount message.
 
@@ -332,7 +332,7 @@ A flow that retrieves a ISO20022 message containing information about a payment 
 * `paymentId` - The ID associated with the payment that was previously initiated.
 * `selectedPaymentRail` - The payment rail through which the payment was made.
 
-#### Return Type
+#### Return type
 
 `String` - This flow will return a ISO20022 formatted message with information about the specified payment.
 ### NegotiatePaymentRailFlow
@@ -344,7 +344,7 @@ Facilitates negotiation between two nodes to determine the appropriate payment r
 * `counterParty` - The legal identity of the counter-party with whom we should be negotiating payment details.
 * `amount` - An amount representing the amount of the payment to be initiated.
 
-#### Return Type
+#### Return type
 
 `String` - This flow will request a list of enabled payment rails from the counterparty, filter the list to determine which payment rails are viable, and return the negotiated rail.
 
@@ -360,7 +360,7 @@ A counter flow in which the responding node analyzes the payments rails suggeste
 
 `counterpartySession` - A communication session provide by the counter party.
 
-#### Return Type
+#### Return type
 
 `Unit / Void` - None.
 
@@ -378,7 +378,7 @@ This flows sends a completed payment id to the counter party.
 * `beneficiaryParty` - The legal identity of the party receiving the payment.
 * `paymentRecord` - A record of a previously completed payment.
 
-#### Return Type
+#### Return type
 
 `Unit / Void` - None.
 
@@ -394,7 +394,7 @@ This flows receives a completed payment record from the counter party and persis
 
 `session` - The flow session provided by Corda, which we will use to respond to the initiating party..
 
-#### Return Type
+#### Return type
 
 `Unit / Void` - None.
 
@@ -410,7 +410,7 @@ This flow is available to the node operator.
 * `paymentAmount` - The amount of the payment denominated in the specified currency.
 * `clientDeduplicationId` - An optional ID that will be used to deduplicate payments initiated by the client.
 
-#### Return Type
+#### Return type
 
 `PaymentRecord` - This flow will return the persisted `PaymentRecord` object.
 
@@ -473,21 +473,21 @@ The validation rules are Kotlin classes which will implement one of the followin
 The rules are expressed as Kotlin code operating on the POJO representation of the message which throws an exception if the validation fails.
 
 
-## Mock Payment Rail
+## Mock payment rail
 
-The `mock-payment-rail` module contains two subpackages: `actions` and `flows`
+The `mock-payment-rail` module contains two sub-packages: `actions` and `flows`
 
 - `actions` contains two actions: `InitiateMockRailPayment` and `GetMockRailPaymentByPaymentId`, each triggered when a node needs to make a request to the MockRail API during a flow.
 
 The module also contains a `MockRailClient`, a wrapper class providing access to the MockPaymentRail API as well as a `MockRailService`, an implementation of `PaymentRailServiceInterface`.  This service allows `payments-core` to make payments using the MockPaymentRail API.
 
-### Mock Payment Rail Service Provider
+### Mock payment rail service provider
 
 The `mock-payment-rail-service-provider` module is comprised of a SpringBoot Web Server acting as Mock PSP for testing purposes.  The web server endpoints allow you to create an account, make a payment, and get a payment record.
 
 The `Controller` class contains all the endpoints and implementations.
 
-### Mock Payment Rail Flows
+### Mock payment rail flows
 
 Below are all the flows for nodes to make a payment from a node to an external destination (an account in Mock Rail, denoted by its `UniqueIdentifier`), from one node to another node, and to poll a processed payment.
 
@@ -504,7 +504,7 @@ This flow makes a payment using the MockRail API and client to a destination not
 * `paymentAmount` - The amount of the payment to be made denominated in the specified currency.
 * `destination` - The destination of the payment to be initiated.
 
-#### Return Type
+#### Return type
 
 * `PaymentResult<String>` - This flow returns a `PaymentResult` object.
 
@@ -518,7 +518,7 @@ This flow facilitates the complete process of making a payment to another Corda 
 * `paymentAmount` - The amount of the payment to be made denominated in the specified currency.
 * `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication
 
-#### Return Type
+#### Return type
 
 * `PaymentResult<String>` - This flow returns a `PaymentResult` object.
 
@@ -530,7 +530,7 @@ This flows responds to an initiated `MockRailPaymentFlow` with an appropriate `d
 
 * `session` - The flow session provided by Corda which we will use to respond to the initiating party.
 
-#### Return Type
+#### Return type
 
 * `Unit / Void` - None.
 
@@ -545,7 +545,7 @@ This flow initiates a payment using the MockRail payment rail.  It will construc
 * `paymentAmount` - The amount of the payment to be initiated, denominated in a specific currency.
 * `destination` - UniqueIdentifier of beneficiary
 
-#### Return Type
+#### Return type
 
 * `String` - JSON representing a record of the initiated payment.
 
@@ -564,7 +564,7 @@ This flow executes a `GetMockRailPaymentByPaymentId` action and is used as a sub
 
     * `paymentId` - The ID of the payment that has been submitted for processing by the MockRail payment rail.
 
-#### Return Type
+#### Return type
 
     * `String` - JSON representing a record of the processed payment.
 

@@ -12,7 +12,7 @@ weight: 200
 ---
 # Modulr Payments Rail Alpha
 
-Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rails CorDapp, along with the [Payments-core CorDapp](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
+Modulr is a payments-as-a-service platform which automates payment flows through one API. You can use the Modulr Payments Rail CorDapp, along with [Payments-core](payments-core-cordapp) to make payments using Modulr as a Payment Service Provider (PSP).
 
 {{< warning >}}
 This version of the Modulr Payments Rail is fully operational, but is at a very early stage in its development. If you are interested in using this solution at a commercial scale, contact a Corda specialist to explore how the development of this feature is set to accelerate and change in future versions.
@@ -43,7 +43,7 @@ Use this documentation to explore the `modulr-rail` module. You should also be f
 In the Modulr payments rail main submodule, there are two packages:
 
 * Client - which contains the `ModulrClient` class - a proxy to the Modulr API.
-* Rail - which contains sub-projects with the actions, flows, and services required to make payments from a Corda node via the ModulR PSP.
+* Rail - which contains sub-projects with the actions, flows, and services required to make payments from a Corda node via the Modulr PSP.
 
 ### Client Module
 
@@ -110,7 +110,7 @@ Makes a payment using the Modulr api and client to a destination not represented
 * `isoMessage` - A XML message formatted in ISO20022.
 * `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication.
 
-#### Return Type
+#### Return type
 
 * `String` - This flow will return a `String` representing an ISO20022 status report message regarding the Modulr payment.
 
@@ -124,7 +124,7 @@ This flow initiates a payment using the Modulr payment rail.  It will construct 
 * `destination` - Information surrounds the destination (beneficiary) of the payment.
 * `clientDeduplicationId` - An ID submitted by the invoking client for the purposes of deduplication.
 
-#### Return Type
+#### Return type
 
 * `PaymentResult<ModulrPaymentEntity>` - This flow will return a `PaymentResult` object with type argument `ModulrPaymentEntity`, representing the result of running a `ModulrPaymentPollingFlow` as a subflow.
 
@@ -142,7 +142,7 @@ This flow gets the account balance for the specified account.
 
 * `isoMessage` - A XML message formatted in ISO20022.
 
-#### Return Type
+#### Return type
 
 * `String` - This flow will return a XML `String` representing the balance of the specified account.
 
@@ -154,7 +154,7 @@ This flow executes a `GetModulrPaymentByID` action and is used as a subflow by s
 
 * `paymentId` - The ID of the payment that has been submitted for processing by the Modulr payment rail
 
-#### Return Type
+#### Return type
 
 * `PaymentResult<ModulrPaymentEntity>` - This flow will return a `PaymentResult` object with type argument `ModulrPaymentEntity`, representing the result of running a `ModulrPaymentPollingFlow` as a subflow.
 
@@ -166,7 +166,7 @@ This flow executes a `GetModulrPaymentByID` action and is used as a subflow by s
 
 ## Frontend Demo
 
-To see how a payments solution might be presented to users on your network, you can use this demo console for ModulR payments on Corda.
+To see how a payments solution might be presented to users on your network, you can use this demo console for Modulr payments on Corda.
 
 Please follow these instructions carefully as this is an experimental web application, and you may encounter bugs:
 
