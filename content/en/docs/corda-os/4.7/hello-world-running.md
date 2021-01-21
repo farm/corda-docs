@@ -105,7 +105,7 @@ the three node folders. Each node folder has the following structure:
 ```
 
 
-Start the nodes by running the following commands from the root of the project:
+Start the nodes by running the following command from the root of the project:
 
 * Mac OSX: `build/nodes/runnodes`
 * Windows: `build/nodes/runnodes.bat`
@@ -135,7 +135,7 @@ More about SSH and how to connect can be found on the [Node shell](shell.md) pag
 You want to create an IOU of 99 with `PartyB`. To start the `IOUFlow`, type the following syntax:
 
 ```bash
-start IOUFlow iouValue: 99, otherParty: "O=PartyB,L=New York,C=US"
+start IOUFlow iouMessage: 99, otherParty: "O=PartyB,L=New York,C=US"
 ```
 
 This single command will cause `PartyA` and `PartyB` to automatically agree an IOU. This is one of the great advantages of

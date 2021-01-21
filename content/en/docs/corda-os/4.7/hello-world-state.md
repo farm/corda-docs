@@ -184,4 +184,4 @@ While you don't need to rewrite the contract, you will need to make a few small 
 * Change `getMsg` to `getValue`.
 {{% /note %}}
 
-In the next tutorial, you’ll implement our own contract and command.
+In the next tutorial, you’ll implement your own contract and command.
