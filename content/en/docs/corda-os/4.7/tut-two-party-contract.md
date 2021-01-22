@@ -233,27 +233,27 @@ Your contract also needs to define the actual contract constraints by implementi
 `verify` function is to write a function that, given a transaction:
 
 
-* Throws an `IllegalArgumentException` if the transaction is considered invalid
-* Does **not** throw an exception if the transaction is considered valid
+* Throws an `IllegalArgumentException` if the transaction is considered invalid.
+* Does **not** throw an exception if the transaction is considered valid.
 
 In deciding whether the transaction is valid, the `verify` function only has access to the contents of the
 transaction:
 
 
-* `tx.inputs`, which lists the inputs
-* `tx.outputs`, which lists the outputs
-* `tx.commands`, which lists the commands and their associated signers
+* `tx.inputs`, which lists the inputs.
+* `tx.outputs`, which lists the outputs.
+* `tx.commands`, which lists the commands and their associated signers.
 
 The `verify` function also has access to the transaction’s attachments and time-window, which you won’t be using in this tutorial.
 
 Based on the constraints enumerated above, you need to write a `verify` function that rejects a transaction if any of
 the following are true:
 
-* The transaction doesn’t include a `Create` command
-* The transaction has inputs
-* The transaction doesn’t have exactly one output
-* The IOU itself is invalid
-* The transaction doesn’t require the lender’s signature
+* The transaction doesn’t include a `Create` command.
+* The transaction has inputs.
+* The transaction doesn’t have exactly one output.
+* The IOU itself is invalid.
+* The transaction doesn’t require the lender’s signature.
 
 
 #### Command constraints
