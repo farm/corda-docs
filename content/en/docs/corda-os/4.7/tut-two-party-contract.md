@@ -60,11 +60,11 @@ interface Contract {
 
 From the above example, you can see that `Contract` expresses its constraints through a `verify` function that takes a transaction as input,
 and:
-* Throws an `IllegalArgumentException` if it rejects the transaction proposal
-* Returns silently if it accepts the transaction proposal
+* Throws an `IllegalArgumentException` if it rejects the transaction proposal.
+* Returns silently if it accepts the transaction proposal.
 
 {{< note >}}
-As mentioned in the [Writing the state](hello-world-state.md) tutorial, this is Corda source code and is therefore written in Kotlin.
+As mentioned in the [Writing the state](hello-world-state.md) tutorial, the above is Corda source code and is therefore written in Kotlin.
 {{< /note >}}
 
 ## Controlling IOU evolution
@@ -76,19 +76,19 @@ For the purposes of this tutorial, let’s say that you want to impose the const
 transfer them or redeem them for cash. One way to enforce this behaviour would be by imposing the following constraints:
 
 
-* A transaction involving IOUs must consume zero inputs, and create one output of type `IOUState`
+* A transaction involving IOUs must consume zero inputs, and create one output of type `IOUState`.
 * The transaction should also include a `Create` command, indicating the transaction’s intent (more on commands
-shortly)
+shortly).
 
 You might also want to impose some constraints on the properties of the issued `IOUState`:
 
-* Its value must be non-negative
-* The lender and the borrower cannot be the same entity
+* Its value must be non-negative.
+* The lender and the borrower cannot be the same entity.
 
 And finally, you'll want to impose constraints on who is required to sign the transaction:
 
-* The IOU’s lender must sign
-* The IOU’s borrower must sign
+* The IOU’s lender must sign.
+* The IOU’s borrower must sign.
 
 
 You can visualise this transaction as follows:
@@ -207,7 +207,7 @@ The first thing you'll add to your contract is a *command*.
 Commands serve two functions:
 
 * They indicate the transaction’s intent, allowing different verification to be performed for different types of
-transaction. For example, a transaction proposing the creation of an IOU could have to meet different constraints
+transactions. For example, a transaction proposing the creation of an IOU could have to meet different constraints
 to one redeeming an IOU.
 * They allow you to define the required signers for the transaction. For example, IOU creation might require signatures
 from the lender only, whereas the transfer of an IOU might require signatures from both the IOU’s borrower and lender.

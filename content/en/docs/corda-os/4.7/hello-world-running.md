@@ -141,6 +141,17 @@ start IOUFlow iouMessage: 99, otherParty: "O=PartyB,L=New York,C=US"
 This single command will cause `PartyA` and `PartyB` to automatically agree an IOU. This is one of the great advantages of
 the flow framework - it allows you to reduce complex negotiation and update processes into a single function call.
 
+Starting this flow will return the following:
+```bash
+✅   Starting
+         Requesting signature by notary service
+             Requesting signature by Notary service
+             Validating response from Notary service
+    ✅   Broadcasting transaction to participants
+➡️   Done
+Flow completed with result: null
+```
+
 If the flow worked, it should have recorded a new IOU in the vaults of both `PartyA` and `PartyB`. Let’s check.
 
 You can check the contents of each node’s vault by running:
