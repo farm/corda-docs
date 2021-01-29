@@ -33,7 +33,7 @@ Follow these steps to do so:
 
 1. Create a secure raw password following best practices.
 2. Encrypt the raw password using [bcrypt](https://auth0.com/blog/hashing-in-action-understanding-bcrypt/).
-3. Add the encrypted password to this line in the database: https://github.com/corda/bank-in-a-box/blob/release/bankinabox/1.0/clients/src/main/resources/db/changelog/user-schema-dml-v1.changelog.xml#L21 .
+3. Add the encrypted password to this line in the database: [https://github.com/corda/bank-in-a-box/blob/release/bankinabox/1.0/clients/src/main/resources/db/changelog/user-schema-dml-v1.changelog.xml#L21](https://github.com/corda/bank-in-a-box/blob/release/bankinabox/1.0/clients/src/main/resources/db/changelog/user-schema-dml-v1.changelog.xml#L21) .
 
 {{< /note >}}
 
