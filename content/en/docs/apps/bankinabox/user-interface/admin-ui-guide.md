@@ -27,11 +27,13 @@ The default Admin user name and password are as follows:
 After entering the admin username and password, you will arrive at the home screen. From the left sidebar navigation, you can access different screens depending on your role (Admin or Customer).
 
 {{< note >}}
-As this application should not be used in production, you do not need to change the admin password after the initial login.
+Although this application should not be used in production, you must change the admin password after the initial login.
 
-However, if you wish to do so, you can edit the password in the database on this line: https://github.com/corda/bank-in-a-box/blob/release/bankinabox/1.0/clients/src/main/resources/db/changelog/user-schema-dml-v1.changelog.xml#L21
+Follow these steps to do so:
 
-The new password must be bcrypt encrypted.
+1. Create a secure raw password following best practices.
+2. Encrypt the raw password using [bcrypt](https://auth0.com/blog/hashing-in-action-understanding-bcrypt/).
+3. Add the encrypted password to this line in the database: https://github.com/corda/bank-in-a-box/blob/release/bankinabox/1.0/clients/src/main/resources/db/changelog/user-schema-dml-v1.changelog.xml#L21 .
 
 {{< /note >}}
 
