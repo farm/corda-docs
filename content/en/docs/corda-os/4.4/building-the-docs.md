@@ -34,7 +34,7 @@ Steps:
 4. Fork the [corda-docs](https://github.com/corda/corda-docs/) repository and ensure it is added as the upstream remote in your fork.
 5. Clone your fork locally and, in command-line, navigate (`cd`) to root of the fork repo.
 6. Run `hugo serve`.
-7. Open the local docs site build on [http://localhost:1313](http://localhost:1313) (or whatever it says in the console) in your browser.
+7. Open the local docs site built on [http://localhost:1313](http://localhost:1313) in your browser.
 8. Edit the documentation source files in `markdown` - all source files are in the `../content` directory in the repo structure. Each edit triggers an immediate page update on [http://localhost:1313](http://localhost:1313).
 
 ## Contribute to documentation updates
