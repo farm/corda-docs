@@ -31,7 +31,7 @@ Steps:
 1. Download [Visual Studio Code](https://code.visualstudio.com/) or a markdown editor of your choice ([atom](https://atom.io/), for example).
 2. Download [Hugo](https://github.com/gohugoio/hugo/releases). Use the latest, extended version, otherwise at least v0.65.
 3. Ensure the Hugo binary is on your `PATH`.
-4. Fork the [corda-docs](https://github.com/corda/corda-docs/) repository and add it as upstream.
+4. Fork the [corda-docs](https://github.com/corda/corda-docs/) repository and ensure it is added as the upstream remote in your fork.
 5. Clone your fork locally and, in command-line, navigate (`cd`) to root of the fork repo.
 6. Run `hugo serve`.
 7. Open the local docs site build on [http://localhost:1313](http://localhost:1313) (or whatever it says in the console) in your browser.
