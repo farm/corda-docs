@@ -23,11 +23,10 @@ In the previous steps of the Hello, World! tutorial, you built a CorDapp which e
 
 Your CorDapp was made up of two elements:
 
-* An `IOUState`, representing IOUs on the blockchain
-* An `IOUFlow` and `IOUFlowResponder` flow pair, orchestrating the process of agreeing the creation of an IOU on-ledger
+* An `IOUState`, representing IOUs on the blockchain.
+* An `IOUFlow` and `IOUFlowResponder` flow pair, orchestrating the process of agreeing the creation of an IOU on-ledger.
 
-However, the CorDapp as it stands so far does not impose any constraints on the evolution of IOUs on the blockchain over time. Anyone would be free
-to create IOUs of any value, between any party.
+However, the CorDapp as it stands so far does not impose any constraints on the evolution of IOUs on the blockchain over time. Anyone would be free to create IOUs of any value, between any party.
 
 To rectify this, you must next write a contract to impose rules on how an `IOUState` can change over time. In turn, this
 will require some small changes to the flow you defined earlier in [Writing the flow](hello-world-flow.md).

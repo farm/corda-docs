@@ -38,13 +38,13 @@ Open a terminal window in the directory where you want to download the CorDapp t
 {{< tabs name="tabs-1" >}}
 {{% tab name="kotlin" %}}
 ```kotlin
-git clone https://github.com/corda/cordapp-template-kotlin.git ; cd cordapp-template-kotlin
+git clone https://github.com/corda/cordapp-template-kotlin.git
 ```
 {{% /tab %}}
 
 {{% tab name="java" %}}
 ```java
-git clone https://github.com/corda/cordapp-template-java.git ; cd cordapp-template-java
+git clone https://github.com/corda/cordapp-template-java.git
 ```
 {{% /tab %}}
 
