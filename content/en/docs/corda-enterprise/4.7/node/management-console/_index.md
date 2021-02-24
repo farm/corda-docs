@@ -11,7 +11,7 @@ weight: 76
 ---
 # Node management console
 
-The node management console allows you to see information about a node and perform some operations on it. It runs as a plug-in for the [Gateway service](../../../../cenm/1.5/gateway-service.md).
+The node management console allows you to see information about a node and perform some operations on it. It runs as a plug-in for the [Gateway service](../gateway-service.md).
 
 The node management console allows you to see the following information about the node:
 
