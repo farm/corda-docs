@@ -231,7 +231,7 @@ The attached transaction must be of type `SignedTransaction` because other types
 {{< warning >}}
 To use the same proof twice or more, states would have to be reissued many times.
 
-It is possible to create many `ReIssuanceRequest` requests for the same states. Therefore, before reissuing states, the issuing party must check if any of the requested states have already been reissued. The CorDapp performs a check through querying `ReIssuanceLock` objects to prevent accidental reapproval, but in parallelized environments a form of request de-duplication must be used in the calling application.
+It is possible to create many `ReIssuanceRequest` requests for the same states. Therefore, before reissuing states, the issuing party must check if the requested states have already been reissued. The CorDapp performs a check through querying `ReIssuanceLock` objects to prevent accidental reapproval, but in parallelized environments a form of request de-duplication must be used in the calling application.
 
 {{< /warning >}}
 
